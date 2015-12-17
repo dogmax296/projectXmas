@@ -1,0 +1,32 @@
+// FONT
+
+$font-family-main:		'Roboto';
+
+$font-weight-main:         400;
+$font-weight-ofthen:       300;
+$font-weight-rare:         500;
+$font-weight-seldom:       700;
+
+
+// COLOR
+
+$gray-base:             rgba(0,0,0,1) !default;
+$gray-darker:           rgba(188,188,188,1) !default; // #bcbcbc textare progress line bg
+$gray-dark:             rgba(177,154,145,1) !default;  //#b19a91 input border active
+$gray:                  rgba(95,103,106,1) !default; //#5f676a input border not active
+$gray-light:            rgba(118,123,125,1) !default; //#767b7d placeholder not active
+$gray-lighter:          rgba(255,255,255,1) !default; // #fff
+
+$brand-cave:            rgba(0,0,0,0.8) !default; //form bg with alfa light
+$brand-primary:         rgba(147,62,62,1) !default; //#933e3e menu active bg exept clock
+$brand-success:         rgba(157,79,79,1) !default; //#9d4f4f round clock bg
+$brand-info:            rgba(181,133,133,1) !default; //#b58585 minutes clock color
+$brand-warning:         rgba(248,90,68,1) !default; //#f85a44 input error
+$brand-danger:          rgba(107,11,11,1) !default; //#6b0b0b top clock bg
+$brand-safe:            rgba(193,105,105,1) !default; //#c16969 up down buttons border
+
+
+$brand-bull:            rgba(255,16,16,1); //#ff1010 hamburger bg
+$brand-floor:           rgba(72,16,255,1); //#4810ff letter-top bg
+$brand-dram:            rgba(42,12,138,1); //#2a0c8a heart bg
+$brand-good:            rgba(7,135,255,1); //#0787ff letter-bottom bg

@@ -4,36 +4,63 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>DOCUMENT</title>
-		<link rel="stylesheet" href="css/all.css">
+
+		<!-- FONT -->
+
+		<link href='https://fonts.googleapis.com/css?family=Roboto:500,700,300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/style.css">
 	</head>
-
-
-<!-- Latest compiled and minified CSS & JS -->
-		<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<script src="http://code.jquery.com/jquery.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		
-
-		<!-- Local bootstrap CSS & JS -->
-		<link rel="stylesheet" media="screen" href="bootstrap.min.css">
-		<script src="jquery.js"></script>
-		<script src="bootstrap.min.js"></script>
 
 	<body>
 
-		<div class="container">
+		<main>
+			
+			<!-- START form -->
 
-			<div class="row">
+			<div class="form-holder">
 
-				<div class="col-sm-6 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, debitis voluptatum dicta pariatur deserunt blanditiis impedit nesciunt minima quia recusandae voluptatibus saepe nam numquam, nemo autem repellat excepturi repellendus. Nisi.</div>
+				<form action="" class="form">
+					
+					<div class="form__item">
 
-				<div class="col-sm-6 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt libero veniam, ut ducimus nisi porro quisquam nulla in at, earum aliquam incidunt accusamus voluptatibus dignissimos facilis accusantium temporibus iure voluptatum.</div>
+						<input type="text" class="form__control form__input " placeholder="Placeholder">
 
-				<div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt libero veniam, ut ducimus nisi porro quisquam nulla in at, earum aliquam incidunt accusamus voluptatibus dignissimos facilis accusantium temporibus iure voluptatum.</div>
+					</div>
+
+					<div class="form__item">
+
+						<input type="text" class="form__control form__input" placeholder="Placeholder" disabled>
+
+					</div>
+
+					<div class="form__item form__item--error">
+
+						<input type="text" class="form__control form__input" placeholder="Placeholder">
+
+					</div>
+
+					<div class="form__item">
+
+						<label for="textarea-top" class="form__label">Label</label><textarea class="form__control form__textarea" maxlength="130" name="" id="textarea-top" placeholder="Type your text"></textarea>
+
+					</div>
+
+				</form>
+				
+
 
 			</div>
 
-		</div>
+			<!-- END form -->
+
+		</main>
+
+
+
+	<!-- JQUERY -->
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
 	</body>
 

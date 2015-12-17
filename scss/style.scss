@@ -1,0 +1,130 @@
+// VARIABLES AND MIXINS
+@import "style/variables.scss";
+@import "style/mixins.scss";
+
+
+
+// BOOTSTRAP
+@import "bootstrap.scss";
+
+
+html{
+
+	@include font($font-family-main, $font-weight-main,$gray-lighter);
+	font-size: 14px;
+	line-height:14px;
+	
+}
+
+*{
+	transition: all .3s ease-in-out;
+}
+
+.form{
+	
+	&-holder{
+
+		background: $brand-cave;
+		width: 432px;
+		margin:0 auto;///temporary
+		@include padding-custom(20px, 20px, 20px, 20px);
+	}
+
+	&__item{
+		
+		@include margin-vertical(0,45px);
+		position: relative;
+		
+		&--error{
+			
+			
+				
+			&:after{
+
+				content:"Error message here!";
+				font-size: 14px;
+				color: $brand-warning;
+				position: absolute;
+				bottom:-27px;
+				left:0;
+				
+			}
+
+			&:before{
+
+				content:"\26A0";
+				font-size: 24px;
+				color: $brand-warning;
+				position: absolute;
+				bottom:-25px;
+				right:0;				
+			}
+			
+			.form__input{
+
+				border-bottom: 1px solid $brand-warning;
+				
+				&:active,
+				&:focus{
+
+					border-bottom: 1px solid $brand-warning;
+				}
+			}
+		}
+	}
+
+	&__control{
+
+		background: transparent;
+		border:none;
+		@include font($font-family-main, $font-weight-main,$gray-lighter);
+		font-size: 20px;
+		width:100%;
+		
+		&::-webkit-input-placeholder {color:$gray-light;}
+		&::-moz-placeholder          {color:$gray-light;}/* Firefox 19+ */
+		&:-moz-placeholder           {color:$gray-light;}/* Firefox 18- */
+		&:-ms-input-placeholder      {color:$gray-light;}
+
+		&:active,
+		&:focus{
+			outline:none;
+
+		}
+	}
+
+	&__input{
+
+		border-bottom: 1px solid $gray;
+		@include padding-vertical(10px,10px);
+		
+		
+				
+		&:active,
+		&:focus{
+
+			border-bottom: 1px solid $gray-dark;
+		}
+
+		&:disabled{
+
+			border-bottom: 1px dashed $gray-light;
+
+		}
+		
+	}
+
+	&__label{
+
+		@include font($font-family-main, $font-weight-main,$gray-light);
+		font-size:14px;
+		display: block;
+		@include margin-vertical(0,15px);
+	}
+
+	&__textarea{
+		
+		resize:none;
+		
+	}
+}
