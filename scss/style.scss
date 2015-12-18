@@ -34,7 +34,7 @@ body{
 
 .container{
 
-	width:1280px;
+	width:auto;
 	margin: 0 auto;
 }
 
@@ -42,18 +42,7 @@ body{
 	
 	@include padding-vertical(160px, 120px);
 	
-	&__calendar{
-
-		display: inline-block;
-		vertical-align: middle;
-	}
-
-	&__form{
-
-		display: inline-block;
-		vertical-align: middle;
-		@include margin-horizontal(0, 80px);
-	}
+	
 }
 
 
@@ -62,7 +51,7 @@ body{
 	&-holder{
 
 		background: $brand-cave;
-		width: 432px;
+		// width: 432px;
 		// margin:0 auto;///temporary
 		@include padding-custom(20px, 20px, 20px, 20px);
 	}
@@ -113,7 +102,7 @@ body{
 	}
 
 	&__control{
-
+		border-radius:0;
 		background: transparent;
 		border:none;
 		@include font($font-family-main, $font-weight-main,$gray-lighter);
@@ -229,6 +218,8 @@ body{
 	width: 410px;
 	border:none;
 	background: transparent;
+	display: block;
+    margin: 0 auto;
 	
 	&--nav{
 
@@ -325,11 +316,13 @@ body{
 .date-now{
 
 	border: 20px solid $gray-lighter;
-	display: inline-block;
-	vertical-align: top;
-    text-align: center;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
     @include padding-custom(47px, 52px, 56px, 52px);
-    @include margin-vertical(5px, 0);
+    @include margin-vertical(0,100px);
+    width: 315px;
+    
 	
 	&__month{
 
@@ -353,9 +346,11 @@ body{
 
 .calendar{
 
+	display: block;
+	margin: 0 auto;
+	@include margin-vertical(0,100px);
 	
-	display: inline-block;
-	vertical-align: top;
+	
 }
 
 // POPUP
@@ -432,4 +427,108 @@ body{
 	}
 	
 }
+
+
+
+// RESPONSIVE
+
+
+@media (min-width:$screen-sm){
+	
+	.container{
+
+		width:750px;
+	}
+
+	.date-now{
+
+		display: inline-block;
+		vertical-align: top;
+		@include margin-vertical(5px, 0);
+		width: auto;
+	}
+
+	.calendar{
+
+		display: inline-block;
+		vertical-align: top;
+		margin:0;
+	}
+
+	.main{
+
+		&__calendar{
+
+			width: 100%;
+    		text-align: center;
+    		@include margin-vertical(0,100px);
+
+		}
+		
+		&__form{
+			
+			width: 58%;
+			margin:0 auto;
+			display: block;
+			
+		}
+	}
+}
+
+@media (min-width:$screen-md){
+	
+	.container{
+
+		width:970px;
+	}
+
+	.main{
+		
+		&__calendar{
+			
+			// width: 100%;
+   //  		text-align: center;
+   //  		
+		}
+
+		&__form{
+
+			// display: block;
+			width: 45%;
+			// margin:0 auto;
+		}
+	}
+}
+
+@media (min-width:$screen-lg){
+	
+	.container{
+
+		width:1170px;
+	}
+
+	.date-now{
+
+		@include padding-custom(47px, 35px, 56px, 35px);
+	}
+
+	.main{
+		
+		&__calendar{
+
+			display: inline-block;
+			vertical-align: middle;
+			width: 59%;
+		}
+
+		&__form{
+
+			display: inline-block;
+			vertical-align: middle;
+			width: 34%;
+			@include margin-horizontal(0, 75px);
+		}
+	}
+}
+
 

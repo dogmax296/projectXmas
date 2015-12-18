@@ -839,7 +839,7 @@ body {
 }
 
 .container {
-  width: 1280px;
+  width: auto;
   margin: 0 auto;
 }
 
@@ -848,21 +848,8 @@ body {
   padding-bottom: 120px;
 }
 
-.main__calendar {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.main__form {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0;
-  margin-left: 80px;
-}
-
 .form-holder {
   background: rgba(0, 0, 0, 0.8);
-  width: 432px;
   padding-top: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
@@ -904,6 +891,7 @@ body {
 }
 
 .form__control {
+  border-radius: 0;
   background: transparent;
   border: none;
   font-family: "Roboto";
@@ -1021,6 +1009,8 @@ body {
   width: 410px;
   border: none;
   background: transparent;
+  display: block;
+  margin: 0 auto;
 }
 
 .datepicker--nav {
@@ -1097,15 +1087,16 @@ body {
 
 .date-now {
   border: 20px solid white;
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  margin: 0 auto;
   text-align: center;
   padding-top: 47px;
   padding-right: 52px;
   padding-bottom: 56px;
   padding-left: 52px;
-  margin-top: 5px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 100px;
+  width: 315px;
 }
 
 .date-now__month {
@@ -1124,8 +1115,10 @@ body {
 }
 
 .calendar {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 100px;
 }
 
 .popup {
@@ -1197,6 +1190,68 @@ body {
   padding-left: 78px;
   margin-right: 0;
   margin-left: 32px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  .date-now {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-bottom: 0;
+    width: auto;
+  }
+  .calendar {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+  }
+  .main__calendar {
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+  .main__form {
+    width: 58%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  .main__form {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+  .date-now {
+    padding-top: 47px;
+    padding-right: 35px;
+    padding-bottom: 56px;
+    padding-left: 35px;
+  }
+  .main__calendar {
+    display: inline-block;
+    vertical-align: middle;
+    width: 59%;
+  }
+  .main__form {
+    display: inline-block;
+    vertical-align: middle;
+    width: 34%;
+    margin-right: 0;
+    margin-left: 75px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
