@@ -824,12 +824,12 @@ html {
   font-weight: 400;
   color: white;
   font-size: 14px;
-  line-height: 14px;
 }
 
 * {
   -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
 }
 
 body {
@@ -860,10 +860,6 @@ body {
   margin-left: 80px;
 }
 
-.progress-bar {
-  background-color: red;
-}
-
 .form-holder {
   background: rgba(0, 0, 0, 0.8);
   width: 432px;
@@ -877,6 +873,7 @@ body {
   margin-top: 0;
   margin-bottom: 45px;
   position: relative;
+  clear: both;
 }
 
 .form__item--error:after {
@@ -968,6 +965,54 @@ body {
   resize: none;
 }
 
+.form__progress {
+  background-color: #bcbcbc;
+  height: 2px;
+}
+
+.form__progress-bar {
+  height: 2px;
+  background-color: #f85a44;
+}
+
+.form__progress-bar--top {
+  position: relative;
+}
+
+.form__current--top {
+  position: absolute;
+  right: -13px;
+  top: -35px;
+  display: block;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: #f85a44;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 1px;
+  font-size: 10px;
+  font-family: "Roboto";
+  font-weight: 500;
+  color: black;
+}
+
+.form__current--top:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 13px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 15px solid #f85a44;
+}
+
+.form__counters {
+  float: right;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
 .datepicker {
   font-family: "Roboto";
   font-weight: 400;
@@ -990,7 +1035,7 @@ body {
 .datepicker--cell {
   border-radius: 50%;
   cursor: default;
-  height: 60px;
+  height: 67px;
 }
 
 .datepicker--cell.-selected-,
@@ -1055,22 +1100,22 @@ body {
   display: inline-block;
   vertical-align: top;
   text-align: center;
-  padding-top: 60px;
-  padding-right: 56px;
-  padding-bottom: 70px;
-  padding-left: 56px;
+  padding-top: 47px;
+  padding-right: 52px;
+  padding-bottom: 56px;
+  padding-left: 52px;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .date-now__month {
   font-size: 55px;
-  margin-top: 0;
-  margin-bottom: 87px;
+  margin: 0;
 }
 
 .date-now__day {
   font-size: 140px;
-  margin-top: 0;
-  margin-bottom: 96px;
+  margin: 0;
 }
 
 .date-now__year {
@@ -1081,6 +1126,77 @@ body {
 .calendar {
   display: inline-block;
   vertical-align: top;
+}
+
+.popup {
+  display: none;
+  background-color: white;
+  color: #ff1010;
+  padding-top: 70px;
+  padding-right: 100px;
+  padding-bottom: 45px;
+  padding-left: 100px;
+  width: 980px;
+  margin: 0 auto;
+}
+
+.popup__img {
+  position: relative;
+  padding-bottom: 200px;
+}
+
+.popup__img-santa {
+  width: 375px;
+  position: absolute;
+  left: -116px;
+  top: -26px;
+  -webkit-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.popup__img-santa-svg {
+  fill: #ff1010;
+}
+
+.popup__img-trees {
+  width: 523px;
+  position: absolute;
+  right: -77px;
+  top: 49px;
+}
+
+.popup__text {
+  font-family: "Roboto";
+  font-weight: 300;
+  color: #ff1010;
+  font-size: 73px;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.popup__text--extra {
+  display: block;
+  font-weight: 700;
+  font-size: 44px;
+}
+
+.popup__newyear {
+  display: inline-block;
+  vertical-align: top;
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #ff1010;
+  font-size: 44px;
+  text-transform: uppercase;
+  border: 14px solid #ff1010;
+  padding-top: 25px;
+  padding-right: 78px;
+  padding-bottom: 25px;
+  padding-left: 78px;
+  margin-right: 0;
+  margin-left: 32px;
 }
 
 /*# sourceMappingURL=style.css.map */

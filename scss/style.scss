@@ -15,12 +15,15 @@ html{
 
 	@include font($font-family-main, $font-weight-main,$gray-lighter);
 	font-size: 14px;
-	line-height:14px;
+	
 	
 }
 
 *{
 	transition: all .3s ease-in-out;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 body{
@@ -53,9 +56,6 @@ body{
 	}
 }
 
-.progress-bar{
-	background-color: red;
-}
 
 .form{
 	
@@ -71,6 +71,8 @@ body{
 		
 		@include margin-vertical(0,45px);
 		position: relative;
+		
+		clear:both;
 		
 		&--error{
 			
@@ -164,6 +166,60 @@ body{
 		resize:none;
 		
 	}
+
+	&__progress{
+
+		background-color: $gray-darker;
+		height:2px;
+		
+		&-bar{
+			
+			height:2px;
+			background-color: $brand-warning;
+			
+			&--top{
+
+				position: relative;
+			}
+		}
+	}
+
+	&__current{
+		
+		&--top{
+
+			position: absolute;
+		    right: -13px;
+    		top: -35px;
+		    display: block;
+		    width: 27px;
+		    height: 27px;
+		    border-radius:50%;
+		    background-color: $brand-warning;
+		    text-align: center;
+		    padding-top: 5px;
+		    padding-left: 1px;
+		    font-size: 10px;
+		    @include font($font-family-main,$font-weight-rare,$gray-base);
+		    
+		    &:after{
+		    	content:"";
+		    	display: block;
+		    	width: 0;
+				height: 0;
+				border-left: 13px solid transparent;
+				border-right: 12px solid transparent;
+				border-top: 15px solid $brand-warning;
+		    }
+		    
+		}
+	}
+
+	&__counters{
+		
+		float:right;
+		@include margin-vertical(15px,0);
+	}
 }
 
 .datepicker{
@@ -189,7 +245,7 @@ body{
 
 		border-radius: 50%;
 		cursor: default;
-		height:60px;
+		height:67px;
 
 		&.-selected-,
 		&.-focus-{
@@ -272,18 +328,21 @@ body{
 	display: inline-block;
 	vertical-align: top;
     text-align: center;
-    @include padding-custom(60px, 56px, 70px, 56px);
+    @include padding-custom(47px, 52px, 56px, 52px);
+    @include margin-vertical(5px, 0);
 	
 	&__month{
 
 		font-size: 55px;
-		@include margin-vertical(0, 87px);
+		// @include margin-vertical(0, 30px);
+		margin:0;
 	}
 
 	&__day{
 
 		font-size: 140px;
-		@include margin-vertical(0, 96px);
+		// @include margin-vertical(0, 45px);
+		margin:0;
 	}
 
 	&__year{
@@ -298,3 +357,79 @@ body{
 	display: inline-block;
 	vertical-align: top;
 }
+
+// POPUP
+
+.popup{
+	display: none;//temporary
+	background-color: $gray-lighter;
+	color: $brand-bull;
+	@include padding-custom(70px, 100px, 45px, 100px);
+	width: 980px;
+	margin:0 auto;
+	
+	&__img{
+
+		position: relative;   
+    	padding-bottom: 200px;
+		
+		&-santa{
+			
+			width: 375px;
+		    position: absolute;
+		    left: -116px;
+		    top: -26px;
+		    transform: rotate(-15deg);
+			
+			&-svg{
+
+				fill: $brand-bull;
+
+			}
+					
+		}
+
+		&-trees{
+
+			width: 523px;
+			position: absolute;
+			right: -77px;
+			top: 49px;
+
+		}		
+	}
+
+	&__text{
+
+		@include font($font-family-main, $font-weight-ofthen,$brand-bull);
+		font-size: 73px;
+		text-transform: uppercase;
+		display: inline-block;
+		vertical-align: top;
+		
+		&--extra{
+			
+			display: block;
+			font-weight: $font-weight-seldom;
+			font-size: 44px;
+			
+		}
+	}
+
+	
+		
+	&__newyear{
+			
+		display: inline-block;
+		vertical-align: top;
+		@include font($font-family-main, $font-weight-seldom,$brand-bull);
+		font-size: 44px;
+		text-transform: uppercase;
+		border: 14px solid $brand-bull;
+		@include padding-custom(25px, 78px, 25px, 78px);
+		@include margin-horizontal(0,32px);
+		
+	}
+	
+}
+
