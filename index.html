@@ -15,45 +15,106 @@
 
 	<body>
 
-		<main>
-			
-			<!-- START form -->
+		<main class="main">
 
-			<div class="form-holder">
-
-				<form action="" class="form">
-					
-					<div class="form__item">
-
-						<input type="text" class="form__control form__input " placeholder="Placeholder">
-
-					</div>
-
-					<div class="form__item">
-
-						<input type="text" class="form__control form__input" placeholder="Placeholder" disabled>
-
-					</div>
-
-					<div class="form__item form__item--error">
-
-						<input type="text" class="form__control form__input" placeholder="Placeholder">
-
-					</div>
-
-					<div class="form__item">
-
-						<label for="textarea-top" class="form__label">Label</label><textarea class="form__control form__textarea" maxlength="130" name="" id="textarea-top" placeholder="Type your text"></textarea>
-
-					</div>
-
-				</form>
+			<div class="container">
 				
+				<div class="main__content">
+					
+					<div class="main__calendar">
 
+						<!-- START date-now -->
+
+						<div class="date-now">
+							
+							<p class="date-now__month"></p>
+							<p class="date-now__day"></p>
+							<p class="date-now__year"></p>
+
+						</div>
+
+						<!-- START date-now -->
+
+						<!-- START calendar -->
+
+						<div class="calendar">
+							
+							<div class="datepicker-here" data-language='en'></div>
+
+						</div>
+
+						<!-- END calendar -->
+
+
+						
+
+					</div>
+
+					<div class="main__form">
+
+						<!-- START form -->
+
+						<div class="form-holder">
+
+							<form action="" class="form">
+								
+								<div class="form__item">
+
+									<input type="text" class="form__control form__input " placeholder="Placeholder">
+
+								</div>
+
+								<div class="form__item">
+
+									<input type="text" class="form__control form__input" placeholder="Placeholder" disabled>
+
+								</div>
+
+								<div class="form__item form__item--error">
+
+									<input type="text" class="form__control form__input" placeholder="Placeholder">
+
+								</div>
+
+								<div class="form__item">
+
+									<label for="textarea-top" class="form__label">Label</label><textarea class="form__control form__textarea" maxlength="130" name="" rows="5" id="textarea-top" placeholder="Type your text"></textarea>
+
+								</div>
+
+								<div class="form__item">
+
+									<div class="progress">
+								        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+								            <span class = "current-value">0%</span>
+								        </div>
+								    </div>
+
+									<label for="textarea-top" class="form__label">Label</label><textarea class="form__control form__textarea form__textarea--bottom" maxlength="130" name="" rows="6" id="textarea-top" placeholder="Type your text"></textarea>
+
+									<div class="count">130</div>
+
+								</div>
+
+							</form>
+							
+						</div>
+
+						<!-- END form -->
+
+					</div>
+
+				</div>
+
+				<div class="main__img"></div>
 
 			</div>
+			
+			
 
-			<!-- END form -->
+			
+
+			
 
 		</main>
 
@@ -61,6 +122,16 @@
 
 	<!-- JQUERY -->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<!-- CALENDAR JS -->
+	<script src="js/datepicker.min.js"></script>
+	<script src="js/datepicker.en.js"></script>
+
+	<!-- MAIN JS -->
+	<script src="js/moment.js"></script>
+
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
 
 	</body>
 

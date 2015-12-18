@@ -1,7 +1,10 @@
+
 // VARIABLES AND MIXINS
 @import "style/variables.scss";
 @import "style/mixins.scss";
 
+// DATEPICKER
+@import "datepicker/datepicker.scss";
 
 
 // BOOTSTRAP
@@ -20,13 +23,47 @@ html{
 	transition: all .3s ease-in-out;
 }
 
+body{
+	
+	@include background-cover;
+	background-image: url(../images/bg.png);
+}
+
+.container{
+
+	width:1280px;
+	margin: 0 auto;
+}
+
+.main{
+	
+	@include padding-vertical(160px, 120px);
+	
+	&__calendar{
+
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__form{
+
+		display: inline-block;
+		vertical-align: middle;
+		@include margin-horizontal(0, 80px);
+	}
+}
+
+.progress-bar{
+	background-color: red;
+}
+
 .form{
 	
 	&-holder{
 
 		background: $brand-cave;
 		width: 432px;
-		margin:0 auto;///temporary
+		// margin:0 auto;///temporary
 		@include padding-custom(20px, 20px, 20px, 20px);
 	}
 
@@ -127,4 +164,137 @@ html{
 		resize:none;
 		
 	}
+}
+
+.datepicker{
+
+	@include font($font-family-main, $font-weight-main,$gray-lighter);
+	font-size: 20px;
+	width: 410px;
+	border:none;
+	background: transparent;
+	
+	&--nav{
+
+		display:none;
+	}
+
+	&--content{
+
+		background: transparent;
+		padding: 0;
+	}
+
+	&--cell{
+
+		border-radius: 50%;
+		cursor: default;
+		height:60px;
+
+		&.-selected-,
+		&.-focus-{
+
+			background-color: transparent;
+			
+			&.-focus-{
+
+				background-color: transparent;
+			}
+
+			&.-current-{
+				color: $gray-lighter;
+				background: $brand-current;
+			}
+		}
+
+		&.-current-{
+
+			color: $gray-lighter;
+			background: $brand-current;
+			cursor: pointer;
+			
+			&.-focus-,
+			&.-selected{
+
+				color: $gray-lighter;
+				background: $brand-current;
+			}
+		}
+
+		&-day{
+
+			width:14%;
+			&.-other-month-{
+
+				opacity:0;
+			}
+
+
+		}
+
+		&-year{
+
+			&.-other-decade{
+
+				opacity:0;
+			}
+
+		}			
+	}
+
+	&--day{
+
+		&-name{
+
+			color: $gray-lighter;
+			font-size: 20px;
+			-webkit-flex: none;
+		    -ms-flex: none;
+		    -webkit-box-flex: none;
+		    flex: none;
+			width: 14%;
+		}
+	}
+
+	&--days{
+
+		&-names{
+			
+			@include margin-custom(0,0,40px,0);
+		}
+	}
+
+}
+
+.date-now{
+
+	border: 20px solid $gray-lighter;
+	display: inline-block;
+	vertical-align: top;
+    text-align: center;
+    @include padding-custom(60px, 56px, 70px, 56px);
+	
+	&__month{
+
+		font-size: 55px;
+		@include margin-vertical(0, 87px);
+	}
+
+	&__day{
+
+		font-size: 140px;
+		@include margin-vertical(0, 96px);
+	}
+
+	&__year{
+		font-size: 55px;
+		margin:0;
+	}
+}
+
+.calendar{
+
+	
+	display: inline-block;
+	vertical-align: top;
 }

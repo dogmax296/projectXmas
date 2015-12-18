@@ -7,6 +7,13 @@
 	color: $color;
 }
 
+// BACKGROUND
+
+@mixin background-cover{
+	background: no-repeat center center;
+	background-size: cover;	
+}
+
 // PADDING
 
 @mixin padding-custom($padding-top, $padding-right, $padding-bottom, $padding-left){
