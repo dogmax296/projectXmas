@@ -64,3 +64,92 @@ $(document).ready(function() {
     
 
 });
+
+
+// ANALOG CLOCK
+
+function analogClock(){
+}
+analogClock.prototype.run = function() {
+    var date = new Date();
+    var second = date.getSeconds()* 6;
+    var minute = date.getMinutes()* 6 + second / 60;
+    var hour = ((date.getHours() % 12) / 12) * 360 + 90;
+    jQuery('.clock__analog-hour').css("transform", "rotate(" + hour + "deg)");
+
+    if(date.getHours()<12){
+
+        $(".clock__analog-am").addClass("clock__analog-meridiem--active")
+        
+    } else{
+
+        $(".clock__analog-pm").addClass("clock__analog-meridiem--active")
+    };
+
+    
+
+};
+
+jQuery(document).ready(function(){
+
+var analogclock = new analogClock();
+
+window.setInterval(function(){ 
+
+analogclock.run(); 
+
+}, 1000);
+
+});
+
+
+// DIGITAL CLOCK
+
+function updateClock() {
+    var date = new Date();
+    var currentHours = date.getHours();
+    var currentMinutes = date.getMinutes();
+
+    // Pad the minutes and seconds with leading zeros, if required
+    currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+
+    // Choose either "AM" or "PM" as appropriate
+    var timeOfDay = (currentHours < 12) ? "AM" : "PM";
+
+    // Convert the hours component to 12-hour format if needed
+    currentHours = (currentHours > 12) ? currentHours - 12 : currentHours;
+
+    // Convert an hours component of "0" to "12"
+    currentHours = (currentHours == 0) ? 12 : currentHours;
+
+    // Compose the string for display
+    
+    $(".clock__digital-hours").html(currentHours);
+    $(".clock__digital-minutes").html(currentMinutes);
+    $(".clock__digital-meridiem").html(timeOfDay);
+        
+ }
+
+$(document).ready(function()
+{
+   setInterval('updateClock()', 1000);
+});
+
+
+// HAMBURGER
+
+$(document).ready(function(){
+    $('.menu__icons-hamburger').click(function(){
+        $(this).toggleClass('hamburger-open');
+    });
+});
+
+// Hidden menu
+
+$(document).ready(function(){
+    $('.menu__icons-hamburger').click(function(){
+        $(".menu").toggleClass('menu--open');
+        $(".main__content").toggleClass('main__content--move');
+
+    });
+});

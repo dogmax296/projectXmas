@@ -6,6 +6,8 @@
 // DATEPICKER
 @import "datepicker/datepicker.scss";
 
+// FONTS
+@import "fontello.scss";
 
 // BOOTSTRAP
 @import "bootstrap.scss";
@@ -41,6 +43,7 @@ body{
 .main{
 	
 	@include padding-vertical(160px, 120px);
+	
 	
 	
 }
@@ -178,28 +181,19 @@ body{
 		&--top{
 
 			position: absolute;
-		    right: -13px;
-    		top: -35px;
+		    right: -15px;
+		    top: -42px;
 		    display: block;
-		    width: 27px;
-		    height: 27px;
-		    border-radius:50%;
-		    background-color: $brand-warning;
+		    width: 30px;
+		    height: 37px;
+		    background: url(../images/sprite.png) 30px 0;
 		    text-align: center;
-		    padding-top: 5px;
-		    padding-left: 1px;
+		    padding-top: 8px;
+		    padding-left: 2px;
 		    font-size: 10px;
 		    @include font($font-family-main,$font-weight-rare,$gray-base);
 		    
-		    &:after{
-		    	content:"";
-		    	display: block;
-		    	width: 0;
-				height: 0;
-				border-left: 13px solid transparent;
-				border-right: 12px solid transparent;
-				border-top: 15px solid $brand-warning;
-		    }
+		   
 		    
 		}
 	}
@@ -357,7 +351,7 @@ body{
 
 .popup{
 	display: none;//temporary
-	background-color: $gray-lighter;
+	background-color: $brand-milk;
 	color: $brand-bull;
 	@include padding-custom(70px, 100px, 45px, 100px);
 	width: 980px;
@@ -426,6 +420,308 @@ body{
 		
 	}
 	
+}
+
+// CLOCK
+
+.clock{
+
+	text-align: center;
+	width: 595px;
+	overflow: hidden;	
+	
+	&__analog{
+
+		background-color: $brand-primary;
+		@include padding-vertical(30px,0);
+		
+		&-holder{
+
+			height: 300px;
+			width: 300px;
+			border-radius:50%;
+			background-color: $brand-success;
+			margin:0 auto;
+
+		}
+		
+		&-time{
+			
+			position: relative;
+			height: 100%;
+			width: 100%;
+			border-radius:50%;
+			background: url(../images/sprite.png) 25px 23px no-repeat;			
+			background-size: cover;
+			
+			
+
+			&:hover,
+			&:focus{
+				
+				
+				
+				.clock__analog-hour{
+					opacity:1;
+					
+					&:before{
+						opacity:1;
+					}
+				}
+
+			}
+		}
+
+		&-hour{
+
+			width:0;
+			height:0;
+			position:absolute;
+			top: 50%;
+		    left: 37%;
+		    margin: 0px 0px 5px -18%;
+		    padding: 0px 11px 2px 29%;
+			-webkit-transform-origin:100% 50%;
+			-ms-transform-origin:100% 50%;
+			transform-origin:100% 50%;
+			border-radius:4px 0 0 4px;
+			background-color: $brand-danger;
+			opacity:0;
+			
+			&:before{
+				content:"";
+				width: 40px;
+    			height: 40px;
+				border-radius:50%;
+				display: inline-block;
+				position: absolute;
+				left: -40px;
+    			top: -18px;
+    			opacity:0;
+    			transition: all .3s ease-in-out;
+    			background-color: $brand-danger;
+
+			}
+		}
+
+		&-minute{
+			
+		}
+
+		&-second{
+			
+		}
+
+		&-meridiem{
+
+			@include font($font-family-main, $font-weight-rare,$gray-base);
+			@include padding-custom(20px,17px,20px,17px);
+			font-size: 20px;
+			display: inline-block;
+			border-radius:50%;
+			color: $gray-lighter;
+			
+			&-holder{
+
+				clear: both;
+    			overflow: hidden;
+    			
+			}
+			
+			&--active{
+				background-color: $brand-danger;
+			}
+		}
+
+		&-am{
+
+			float: left;
+    		@include margin-horizontal(0, 50px);
+		}
+
+		&-pm{
+
+			float: right;
+    		@include margin-horizontal(50px, 0);
+		}
+	}
+
+	&__digital{
+
+		font-size: 80px;
+		@include padding-custom(31px, 0, 33px, 0);
+		background-color: $brand-danger;
+		
+		
+		&-devider{
+
+			-webkit-animation: mymove 1s ease infinite;
+			   -moz-animation: mymove 1s ease infinite;
+			     -o-animation: mymove 1s ease infinite;
+			        animation: mymove 1s ease infinite;
+		}
+		
+		&-meridiem{
+			
+			font-size: 30px;
+			@include margin-horizontal(0,-10px);
+			color: $brand-cream;
+		}
+
+		&-minutes{
+			
+			color: $brand-cream;
+		}
+		
+	}
+}
+
+/* CLOCK DEVIDER ANIMATION */
+
+@-webkit-keyframes mymove {
+	 0% {
+	 		opacity: 1.0;
+	    
+		}
+
+	50% {
+	    opacity: 0;
+	    
+	}
+
+	100% {
+	    opacity: 1.0;
+	    
+	}	
+}
+
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        
+    }
+
+    50% {
+        opacity: 0;
+        
+    }
+
+    100% {
+        opacity: 1.0;
+        
+    };
+}
+
+
+.menu{
+
+	position: fixed;
+    right: -595px;
+    top: 0;
+    z-index:$zindex-tooltip;
+    
+    &.menu--open{
+    	right: 0px;
+
+    }
+	
+	&__icons{
+
+		width: 96px;
+		float:left;
+		@include margin-vertical(160px, 0);
+		
+		&-hamburger{
+
+			position: relative;
+			
+			height: 63px;
+			
+			
+			&-holder{
+
+				background-color: $brand-bull;
+				@include padding-custom(20px, 10px, 22px, 10px);
+			}
+			
+			span{
+
+				display: block;
+				position: absolute;
+				height: 7px;
+				width: 100%;
+				background: $gray-lighter;
+				opacity: 1;
+				transform: rotate(0deg);
+				transition: .25s ease-in-out;
+				
+				
+				&:nth-child(1){
+					top:0;
+				}
+
+				&:nth-child(2){
+					left:0;
+					top:12px;
+				}
+
+				&:nth-child(3){
+					left:0;
+					top:24px;
+				}
+
+				&:nth-child(4){
+					top:36px;
+				}
+				
+			}
+
+			&.hamburger-open{
+
+				span{
+					
+					&:nth-child(1){
+						top:28px;
+  						transform: rotate(135deg);
+					}
+
+					&:nth-child(2){
+						left:-60px;
+						opacity:0;
+					}
+
+					&:nth-child(3){
+						left:-60px;
+						opacity:0;
+					}
+
+					&:nth-child(4){
+						top:28px;
+  						transform: rotate(-135deg);
+					}
+				}
+			}
+		}
+
+		&-item{
+
+			font-size: 36px;
+			text-align: center;
+			@include padding-vertical(24px, 25px);
+		}
+
+		&-facebook{
+			background-color: $brand-floor;
+		}
+
+		&-heart{
+			background-color: $brand-dram;
+		}
+
+		&-mail{
+			background-color: $brand-good;
+		}
+	}
 }
 
 
@@ -497,6 +793,17 @@ body{
 			width: 45%;
 			// margin:0 auto;
 		}
+
+		&__content{
+
+			position: relative;
+	    		left: 0;
+			
+			&--move{
+				position: relative;
+	    		left: -595px;
+			}
+		}
 	}
 }
 
@@ -509,7 +816,7 @@ body{
 
 	.date-now{
 
-		@include padding-custom(47px, 35px, 56px, 35px);
+		@include padding-custom(47px, 45px, 56px, 45px);
 	}
 
 	.main{
@@ -518,7 +825,7 @@ body{
 
 			display: inline-block;
 			vertical-align: middle;
-			width: 59%;
+			width: 60%;
 		}
 
 		&__form{
@@ -526,7 +833,7 @@ body{
 			display: inline-block;
 			vertical-align: middle;
 			width: 34%;
-			@include margin-horizontal(0, 75px);
+			@include margin-horizontal(0, 60px);
 		}
 	}
 }
