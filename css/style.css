@@ -964,6 +964,7 @@ body {
 
 .main__content {
   z-index: 1200;
+  position: relative;
 }
 
 .form-holder {

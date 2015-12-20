@@ -72,6 +72,7 @@ body{
 	&__content{
 		
 		z-index:1200;
+		position: relative;
 	}
 	
 	
@@ -865,6 +866,7 @@ body{
 
 			position: relative;
 	    		left: 0;
+	    		
 			
 			&--move{
 				position: relative;
