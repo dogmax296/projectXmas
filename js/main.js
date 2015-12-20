@@ -150,6 +150,24 @@ $(document).ready(function(){
     $('.menu__icons-hamburger').click(function(){
         $(".menu").toggleClass('menu--open');
         $(".main__content").toggleClass('main__content--move');
+        $(".menu-holder").toggleClass('menu-holder--open');
+
 
     });
 });
+
+
+// SANTA ANIMATION
+
+// $('.clock__analog').click(function(){                        
+//   $('.main__img-santa').animate({
+//     top: '-1500px',
+//     left: '1500px',
+//     easing: 'linear'
+//   }, 800, function() {
+//       $('.popup').css("display", "block");
+//   });
+// });
+
+
+
