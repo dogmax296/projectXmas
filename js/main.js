@@ -171,17 +171,30 @@ $(document).click(function(e) {
 });
 
 
-// SANTA ANIMATION
+// SANTA ANIMATION and Popup showing
 
-// $('.clock__analog').click(function(){                        
-//   $('.main__img-santa').animate({
-//     top: '-1500px',
-//     left: '1500px',
-//     easing: 'linear'
-//   }, 800, function() {
-//       $('.popup').css("display", "block");
-//   });
-// });
+$('.clock__analog').click(function(){  
+
+  $('.main__img-santa').animate({
+    top: '-4000px',
+    left: '1500px',
+    easing: 'linear'
+  }, 800, function() {
+      $('.popup-holder').css("display", "block");
+  });
+
+});
+
+
+// Hide by clicking outside
+$(document).click(function(e) {
+
+    if (e.target.class != 'popup' && !$('.popup').find(e.target).length) {
+        $('.popup-holder').css("display", "none");
+    }
+});
+
+
 
 
 

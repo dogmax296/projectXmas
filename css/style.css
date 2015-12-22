@@ -927,6 +927,11 @@ body {
   background-image: url(../images/bg.png);
 }
 
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .container {
   width: auto;
   margin: 0 auto;
@@ -940,21 +945,20 @@ body {
 .main__img {
   position: relative;
   margin: 0 auto;
-  display: none;
 }
 
 .main__img-santa {
-  width: 760px;
+  width: 400px;
   position: absolute;
-  left: -245px;
-  top: -450px;
+  left: -80px;
+  top: -180px;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
 .main__img-merry-xmas {
-  width: 1000px;
+  width: 450px;
   margin-top: 105px;
   margin-right: auto;
   margin-bottom: 0;
@@ -1126,6 +1130,7 @@ body {
   font-weight: 400;
   color: white;
   font-size: 20px;
+  width: 400px;
   border: none;
   background: transparent;
   display: block;
@@ -1144,10 +1149,10 @@ body {
 .datepicker--cell {
   border-radius: 50%;
   cursor: default;
-  height: 40px;
+  height: 57px;
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .datepicker--cell.-selected-,
@@ -1192,7 +1197,7 @@ body {
 
 .datepicker--day-name {
   color: white;
-  font-size: 12px;
+  font-size: 18px;
   -webkit-flex: none;
   -ms-flex: none;
   -webkit-box-flex: none;
@@ -1376,6 +1381,8 @@ body {
   border-radius: 4px 0 0 4px;
   background-color: #6b0b0b;
   opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 }
 
 .clock__analog-hour:before {
@@ -1502,6 +1509,13 @@ body {
   vertical-align: top;
   margin-right: -4px;
   margin-left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+.menu__icons-hamburger-holder:hover,
+.menu__icons-hamburger-holder:focus {
+  background-color: #ff4343;
 }
 
 .menu__icons-hamburger span {
@@ -1574,14 +1588,35 @@ body {
 
 .menu__icons-facebook {
   background-color: #4810ff;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+.menu__icons-facebook:hover,
+.menu__icons-facebook:focus {
+  background-color: #6f43ff;
 }
 
 .menu__icons-heart {
   background-color: #2a0c8a;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+.menu__icons-heart:hover,
+.menu__icons-heart:focus {
+  background-color: #3810b9;
 }
 
 .menu__icons-mail {
   background-color: #0787ff;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+.menu__icons-mail:hover,
+.menu__icons-mail:focus {
+  background-color: #3aa0ff;
 }
 
 .menu-holder {
@@ -1642,6 +1677,14 @@ body {
     margin: 0 auto;
     display: block;
   }
+  .main__img-santa {
+    width: 700px;
+    left: -130px;
+    top: -1200px;
+  }
+  .main__img-merry-xmas {
+    width: 700px;
+  }
   .popup {
     width: 700px;
     padding-top: 60px;
@@ -1700,6 +1743,12 @@ body {
   }
   .main__content--move {
     right: 595px;
+  }
+  .main__img-santa {
+    left: 30px;
+  }
+  .main__img-merry-xmas {
+    width: 900px;
   }
   .popup {
     width: 900px;
@@ -1821,6 +1870,13 @@ body {
     width: 34%;
     margin-right: 0;
     margin-left: 60px;
+  }
+  .main__img-santa {
+    top: -500px;
+    left: -140px;
+  }
+  .main__img-merry-xmas {
+    width: 1000px;
   }
   .popup {
     width: 980px;
