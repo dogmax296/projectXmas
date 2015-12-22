@@ -952,9 +952,9 @@ body {
   position: absolute;
   left: -80px;
   top: -180px;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -webkit-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg);
 }
 
 .main__img-merry-xmas {
@@ -977,152 +977,11 @@ body {
   top: 511px;
 }
 
-.form-holder {
-  background: rgba(0, 0, 0, 0.8);
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-}
-
-.form__item {
-  margin-top: 0;
-  margin-bottom: 45px;
-  position: relative;
-  clear: both;
-}
-
-.form__item--error:after {
-  content: "Error message here!";
-  font-size: 14px;
-  color: #f85a44;
-  position: absolute;
-  bottom: -27px;
-  left: 0;
-}
-
-.form__item--error:before {
-  content: "\26A0";
-  font-size: 24px;
-  color: #f85a44;
-  position: absolute;
-  right: 0;
-  padding-top: 45px;
-}
-
-.form__item--error .form__input {
-  border-bottom: 1px solid #f85a44;
-}
-
-.form__item--error .form__input:active,
-.form__item--error .form__input:focus {
-  border-bottom: 1px solid #f85a44;
-}
-
-.form__control {
-  border-radius: 0;
-  background: transparent;
-  border: none;
-  font-family: "Roboto";
-  font-weight: 400;
-  color: white;
-  font-size: 20px;
-  width: 100%;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-  /* Firefox 19+ */
-  /* Firefox 18- */
-}
-
-.form__control::-webkit-input-placeholder {
-  color: #767b7d;
-}
-
-.form__control::-moz-placeholder {
-  color: #767b7d;
-}
-
-.form__control:-moz-placeholder {
-  color: #767b7d;
-}
-
-.form__control:-ms-input-placeholder {
-  color: #767b7d;
-}
-
-.form__control:active,
-.form__control:focus {
-  outline: none;
-}
-
-.form__input {
-  border-bottom: 1px solid #5f676a;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  -webkit-transition: border-bottom 0.3s ease-in-out;
-          transition: border-bottom 0.3s ease-in-out;
-}
-
-.form__input:active,
-.form__input:focus {
-  border-bottom: 1px solid #b19a91;
-}
-
-.form__input:disabled {
-  border-bottom: 1px dashed #767b7d;
-}
-
-.form__label {
-  font-family: "Roboto";
-  font-weight: 400;
-  color: #767b7d;
-  font-size: 14px;
+.calendar {
   display: block;
+  margin: 0 auto;
   margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.form__textarea {
-  resize: none;
-}
-
-.form__progress {
-  background-color: #bcbcbc;
-  height: 2px;
-}
-
-.form__progress-bar {
-  height: 2px;
-  background-color: #f85a44;
-  -webkit-transition: width 0.3s ease-in-out;
-          transition: width 0.3s ease-in-out;
-}
-
-.form__progress-bar--top {
-  position: relative;
-}
-
-.form__current--top {
-  position: absolute;
-  right: -15px;
-  top: -42px;
-  display: block;
-  width: 30px;
-  height: 37px;
-  background: url(../images/sprite.png) 30px 0;
-  text-align: center;
-  padding-top: 8px;
-  padding-left: 2px;
-  font-size: 10px;
-  font-family: "Roboto";
-  font-weight: 500;
-  color: black;
-}
-
-.form__counters {
-  float: right;
-  margin-top: 15px;
-  margin-bottom: 0;
+  margin-bottom: 100px;
 }
 
 .datepicker {
@@ -1241,236 +1100,157 @@ body {
   margin: 0;
 }
 
-.calendar {
-  display: block;
-  margin: 0 auto;
+.form-holder {
+  background: rgba(0, 0, 0, 0.8);
+  padding-top: 8px;
+  padding-right: 20px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+}
+
+.form__item {
   margin-top: 0;
-  margin-bottom: 100px;
+  margin-bottom: 38px;
+  position: relative;
+  clear: both;
 }
 
-.popup {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #ff1010;
-  padding-top: 30px;
-  padding-right: 15px;
-  padding-bottom: 30px;
-  padding-left: 15px;
-  width: 300px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.popup-holder {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
+.form__item--error:after {
+  content: "Error message here!";
+  font-size: 14px;
+  color: #f85a44;
+  position: absolute;
+  bottom: -27px;
   left: 0;
-  z-index: 1050;
-  padding-top: 30px;
-  padding-bottom: 0;
-  overflow-y: auto;
 }
 
-.popup-holder--show {
-  display: block;
-  opacity: 1;
-}
-
-.popup__img {
-  position: relative;
-  margin: 0 auto;
-}
-
-.popup__img-santa {
-  width: 180px;
+.form__item--error:before {
+  content: "\26A0";
+  font-size: 24px;
+  color: #f85a44;
   position: absolute;
-  left: 35px;
-  top: -70px;
-  -webkit-transform: rotate(-15deg);
-      -ms-transform: rotate(-15deg);
-          transform: rotate(-15deg);
+  right: 0;
+  padding-top: 45px;
 }
 
-.popup__text {
+.form__item--error .form__input {
+  border-bottom: 1px solid #f85a44;
+}
+
+.form__item--error .form__input:active,
+.form__item--error .form__input:focus {
+  border-bottom: 1px solid #f85a44;
+}
+
+.form__control {
+  border-radius: 0;
+  background: transparent;
+  border: none;
   font-family: "Roboto";
-  font-weight: 300;
-  color: #ff1010;
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-right: auto;
-  margin-bottom: 20px;
-  margin-left: auto;
-}
-
-.popup__text--extra {
-  display: block;
-  font-weight: 700;
-  font-size: 40px;
-}
-
-.popup__newyear {
-  font-family: "Roboto";
-  font-weight: 700;
-  color: #ff1010;
+  font-weight: 400;
+  color: white;
   font-size: 20px;
-  text-transform: uppercase;
-  border: 14px solid #ff1010;
-  padding-top: 25px;
-  padding-right: 78px;
-  padding-bottom: 25px;
-  padding-left: 78px;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+
+.form__control::-webkit-input-placeholder {
+  color: #767b7d;
+}
+
+.form__control::-moz-placeholder {
+  color: #767b7d;
+}
+
+.form__control:-moz-placeholder {
+  color: #767b7d;
+}
+
+.form__control:-ms-input-placeholder {
+  color: #767b7d;
+}
+
+.form__control:active,
+.form__control:focus {
+  outline: none;
+}
+
+.form__input {
+  border-bottom: 1px solid #5f676a;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-transition: border-bottom 0.3s ease-in-out;
+          transition: border-bottom 0.3s ease-in-out;
+}
+
+.form__input:active,
+.form__input:focus {
+  border-bottom: 1px solid #b19a91;
+}
+
+.form__input:disabled {
+  border-bottom: 1px dashed #767b7d;
+}
+
+.form__label {
+  font-family: "Roboto";
+  font-weight: 400;
+  color: #767b7d;
+  font-size: 14px;
+  display: block;
   margin-top: 0;
-  margin-right: auto;
-  margin-bottom: 20px;
-  margin-left: auto;
+  margin-bottom: 10px;
 }
 
-.clock {
+.form__textarea {
+  resize: none;
+}
+
+.form__progress {
+  background-color: #bcbcbc;
+  height: 2px;
+}
+
+.form__progress--bg {
+  height: 2px;
+  background: url(../images/textarea-bg.png) repeat-x;
+}
+
+.form__progress-bar {
+  height: 2px;
+  background-color: #f85a44;
+  -webkit-transition: width 0.3s ease-in-out;
+          transition: width 0.3s ease-in-out;
+}
+
+.form__progress-bar--top {
+  position: relative;
+}
+
+.form__current--top {
+  position: absolute;
+  right: -15px;
+  top: -42px;
+  display: block;
+  width: 30px;
+  height: 37px;
+  background: url(../images/sprite.png) 30px 0;
   text-align: center;
-  overflow: hidden;
-}
-
-.clock__analog {
-  background-color: #933e3e;
-  padding-top: 15px;
-  padding-bottom: 0;
-}
-
-.clock__analog-holder {
-  position: relative;
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  background-color: #9d4f4f;
-  margin: 0 auto;
-}
-
-.clock__analog-time {
-  height: 300px;
-  width: 300px;
-  background: url(../images/sprite.png) 25px 23px no-repeat;
-  background-size: cover;
-  z-index: 1;
-  position: relative;
-}
-
-.clock__analog-time:hover + .clock__analog-hour,
-.clock__analog-time:focus + .clock__analog-hour {
-  opacity: 1;
-}
-
-.clock__analog-time:hover + .clock__analog-hour:before,
-.clock__analog-time:focus + .clock__analog-hour:before {
-  opacity: 1;
-}
-
-.clock__analog-hour {
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 51%;
-  left: 35%;
-  margin: 0px 0px 5px -19%;
-  padding: 0px 11px 2px 32%;
-  -webkit-transform-origin: 100% 50%;
-  -ms-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
-  border-radius: 4px 0 0 4px;
-  background-color: #6b0b0b;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-}
-
-.clock__analog-hour:before {
-  content: "";
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  left: -35px;
-  top: -17px;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-  background-color: #6b0b0b;
-}
-
-.clock__analog-meridiem {
+  padding-top: 8px;
+  padding-left: 2px;
+  font-size: 10px;
   font-family: "Roboto";
   font-weight: 500;
   color: black;
-  padding-top: 12px;
-  padding-right: 10px;
-  padding-bottom: 12px;
-  padding-left: 10px;
-  font-size: 12px;
-  display: inline-block;
-  border-radius: 50%;
-  color: white;
 }
 
-.clock__analog-meridiem-holder {
-  clear: both;
-  overflow: hidden;
-}
-
-.clock__analog-meridiem--active {
-  background-color: #6b0b0b;
-}
-
-.clock__analog-am {
-  float: left;
-  margin-right: 0;
-  margin-left: 50px;
-}
-
-.clock__analog-pm {
+.form__counters {
   float: right;
-  margin-right: 50px;
-  margin-left: 0;
-}
-
-.clock__digital {
-  font-size: 40px;
-  padding-top: 15px;
-  padding-right: 0;
-  padding-bottom: 15px;
-  padding-left: 0;
-  background-color: #6b0b0b;
-}
-
-.clock__digital-devider {
-  -webkit-animation: mymove 1s ease infinite;
-  animation: mymove 1s ease infinite;
-}
-
-.clock__digital-meridiem {
-  font-size: 15px;
-  margin-right: 0;
-  margin-left: -10px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.clock__digital-minutes {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* CLOCK DEVIDER ANIMATION */
-@-webkit-keyframes mymove {
-  0% {
-    opacity: 1.0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1.0;
-  }
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
 .menu {
@@ -1634,16 +1414,252 @@ body {
   z-index: 1030;
 }
 
+.clock {
+  text-align: center;
+  overflow: hidden;
+}
+
+.clock__analog {
+  background-color: #933e3e;
+  padding-top: 15px;
+  padding-bottom: 0;
+}
+
+.clock__analog-holder {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: #9d4f4f;
+  margin: 0 auto;
+}
+
+.clock__analog-time {
+  height: 300px;
+  width: 300px;
+  background: url(../images/sprite.png) 25px 23px no-repeat;
+  background-size: cover;
+  z-index: 1;
+  position: relative;
+}
+
+.clock__analog-time:hover + .clock__analog-hour,
+.clock__analog-time:focus + .clock__analog-hour {
+  opacity: 1;
+}
+
+.clock__analog-time:hover + .clock__analog-hour:before,
+.clock__analog-time:focus + .clock__analog-hour:before {
+  opacity: 1;
+}
+
+.clock__analog-hour {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 51%;
+  left: 35%;
+  margin: 0px 0px 5px -20%;
+  padding: 0px 11px 2px 32%;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  border-radius: 4px 0 0 4px;
+  background-color: #6b0b0b;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+.clock__analog-hour:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: -32px;
+  top: -20px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+  background-color: #6b0b0b;
+}
+
+.clock__analog-meridiem {
+  font-family: "Roboto";
+  font-weight: 500;
+  color: black;
+  padding-top: 12px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  font-size: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  color: white;
+}
+
+.clock__analog-meridiem-holder {
+  clear: both;
+  overflow: hidden;
+}
+
+.clock__analog-meridiem--active {
+  background-color: #6b0b0b;
+}
+
+.clock__analog-am {
+  float: left;
+  margin-right: 0;
+  margin-left: 50px;
+}
+
+.clock__analog-pm {
+  float: right;
+  margin-right: 50px;
+  margin-left: 0;
+}
+
+.clock__digital {
+  font-size: 40px;
+  padding-top: 15px;
+  padding-right: 0;
+  padding-bottom: 15px;
+  padding-left: 0;
+  background-color: #6b0b0b;
+}
+
+.clock__digital-devider {
+  -webkit-animation: mymove 1s ease infinite;
+  animation: mymove 1s ease infinite;
+}
+
+.clock__digital-meridiem {
+  font-size: 15px;
+  margin-right: 0;
+  margin-left: -10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.clock__digital-minutes {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@-webkit-keyframes mymove {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+.popup {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #ff1010;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.popup-holder {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  padding-top: 30px;
+  padding-bottom: 0;
+  overflow-y: auto;
+}
+
+.popup-holder--show {
+  display: block;
+  opacity: 1;
+}
+
+.popup__img {
+  position: relative;
+  margin: 0 auto;
+}
+
+.popup__img-santa {
+  width: 180px;
+  position: absolute;
+  left: 35px;
+  top: -70px;
+  -webkit-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.popup__text {
+  font-family: "Roboto";
+  font-weight: 300;
+  color: #ff1010;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+
+.popup__text--extra {
+  display: block;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.popup__newyear {
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #ff1010;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: 14px solid #ff1010;
+  padding-top: 25px;
+  padding-right: 78px;
+  padding-bottom: 25px;
+  padding-left: 78px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
-  .date-now {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 5px;
-    margin-bottom: 0;
-    width: auto;
+  .main__calendar {
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+  .main__form {
+    width: 58%;
+    margin: 0 auto;
+    display: block;
+  }
+  .main__img-santa {
+    width: 700px;
+    left: -130px;
+    top: -1200px;
+  }
+  .main__img-merry-xmas {
+    width: 700px;
   }
   .calendar {
     display: inline-block;
@@ -1666,24 +1682,12 @@ body {
     margin-bottom: 35px;
     margin-left: 0;
   }
-  .main__calendar {
-    width: 100%;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 100px;
-  }
-  .main__form {
-    width: 58%;
-    margin: 0 auto;
-    display: block;
-  }
-  .main__img-santa {
-    width: 700px;
-    left: -130px;
-    top: -1200px;
-  }
-  .main__img-merry-xmas {
-    width: 700px;
+  .date-now {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-bottom: 0;
+    width: auto;
   }
   .popup {
     width: 700px;
@@ -1750,6 +1754,69 @@ body {
   .main__img-merry-xmas {
     width: 900px;
   }
+  .menu {
+    right: -595px;
+    top: 0;
+    left: auto;
+  }
+  .menu.menu--open {
+    right: 0;
+  }
+  .menu__icons {
+    position: absolute;
+    left: -96px;
+    top: 0;
+    margin-top: 160px;
+    margin-bottom: 0;
+  }
+  .menu__icons-hamburger-holder {
+    height: 92px;
+    width: 96px;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .menu__icons-hamburger span {
+    height: 7px;
+  }
+  .menu__icons-hamburger.hamburger-open span:nth-child(1) {
+    top: 20px;
+  }
+  .menu__icons-hamburger.hamburger-open span:nth-child(4) {
+    top: 20px;
+  }
+  .menu__icons-item {
+    width: 96px;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+  .clock {
+    width: 595px;
+  }
+  .clock__digital {
+    font-size: 80px;
+    padding-top: 31px;
+    padding-right: 0;
+    padding-bottom: 33px;
+    padding-left: 0;
+  }
+  .clock__digital-meridiem {
+    font-size: 30px;
+  }
+  .clock__analog {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+  .clock__analog-meridiem {
+    padding-top: 20px;
+    padding-right: 17px;
+    padding-bottom: 20px;
+    padding-left: 17px;
+    font-size: 20px;
+  }
   .popup {
     width: 900px;
     padding-top: 70px;
@@ -1782,82 +1849,11 @@ body {
     right: -77px;
     top: 49px;
   }
-  .menu {
-    right: -595px;
-    top: 0;
-    left: auto;
-  }
-  .menu.menu--open {
-    right: 0;
-  }
-  .menu__icons {
-    position: absolute;
-    left: -96px;
-    top: 0;
-    margin-top: 160px;
-    margin-bottom: 0;
-  }
-  .menu__icons-hamburger-holder {
-    height: 92px;
-    width: 96px;
-    display: block;
-    vertical-align: none;
-    margin-right: 0;
-    margin-left: 0;
-  }
-  .menu__icons-hamburger span {
-    height: 7px;
-  }
-  .menu__icons-hamburger.hamburger-open span:nth-child(1) {
-    top: 20px;
-  }
-  .menu__icons-hamburger.hamburger-open span:nth-child(4) {
-    top: 20px;
-  }
-  .menu__icons-item {
-    width: 96px;
-    display: block;
-    vertical-align: none;
-    margin-right: 0;
-    margin-left: 0;
-    padding-top: 24px;
-    padding-bottom: 25px;
-  }
-  .clock {
-    width: 595px;
-  }
-  .clock__digital {
-    font-size: 80px;
-    padding-top: 31px;
-    padding-right: 0;
-    padding-bottom: 33px;
-    padding-left: 0;
-  }
-  .clock__digital-meridiem {
-    font-size: 30px;
-  }
-  .clock__analog {
-    padding-top: 30px;
-    padding-bottom: 0;
-  }
-  .clock__analog-meridiem {
-    padding-top: 20px;
-    padding-right: 17px;
-    padding-bottom: 20px;
-    padding-left: 17px;
-    font-size: 20px;
-  }
 }
 
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
-  }
-  .date-now {
-    padding-top: 47px;
-    padding-right: 45px;
-    padding-bottom: 56px;
-    padding-left: 45px;
   }
   .main__calendar {
     display: inline-block;
@@ -1872,11 +1868,17 @@ body {
     margin-left: 60px;
   }
   .main__img-santa {
-    top: -500px;
-    left: -140px;
+    top: -545px;
+    left: -200px;
   }
   .main__img-merry-xmas {
     width: 1000px;
+  }
+  .date-now {
+    padding-top: 47px;
+    padding-right: 45px;
+    padding-bottom: 56px;
+    padding-left: 45px;
   }
   .popup {
     width: 980px;

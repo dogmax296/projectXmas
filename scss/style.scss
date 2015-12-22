@@ -3,10 +3,10 @@
 @import "style/variables.scss";
 @import "style/mixins.scss";
 
-// DATEPICKER
+// DATEPICKER CALENDAR
 @import "datepicker/datepicker.scss";
 
-// FONTS
+// FONT ICONS
 @import "fontello.scss";
 
 // BOOTSTRAP
@@ -16,244 +16,69 @@
 html{
 
 	@include font($font-family-main, $font-weight-main,$gray-lighter);
-	font-size: 14px;
-	
-	
+	font-size: 14px;	
 }
 
 *{
-	
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
 
+// BODY BG
 body{
-	
+
 	@include background-cover;
 	background-image: url(../images/bg.png);
 }
 
 .wrapper{
-	
 	position: relative;
 	overflow:hidden;
 }
 
+// CONTAINER
 .container{
 
 	width:auto;
 	margin: 0 auto;
 }
 
+// MAIN
 .main{
-	
 	@include padding-vertical(160px, 120px);
-	
-	
 	&__img{
-		
 		position: relative;
 		margin: 0 auto;
-		
-
 		&-santa{
-
 			width: 400px;
 		    position: absolute;
 		    left: -80px;
 		    top: -180px;
-		    transform: rotate(-45deg);
-		    
-		    
+		    transform: rotate(-20deg);		    	
 		}
-
 		&-merry-xmas{
-
 			width: 450px;
 			@include margin-custom(105px, auto, 0, auto);
 		}
 	}
-
 	&__content{
-		
 		z-index:1020;
 		position: relative;
 		top:0;//added
 		transition: all .3s ease-in-out;//added
-		
 		&--move{
-			
-			top:511px;
+
+			top:511px;	
 		}
-	}
-	
-	
+	}		
 }
 
-
-.form{
-	
-	&-holder{
-
-		background: $brand-cave;
-		// width: 432px;
-		// margin:0 auto;///temporary
-		@include padding-custom(20px, 20px, 20px, 20px);
-	}
-
-	&__item{
-		
-		@include margin-vertical(0,45px);
-		position: relative;
-		clear:both;
-		
-		&--error{
-			
-			
-				
-			&:after{
-
-				content:"Error message here!";
-				font-size: 14px;
-				color: $brand-warning;
-				position: absolute;
-				bottom:-27px;
-				left:0;
-				
-			}
-
-			&:before{
-
-				content:"\26A0";
-				font-size: 24px;
-				color: $brand-warning;
-				position: absolute;
-				// bottom:-25px;
-				right:0;
-				padding-top: 45px;				
-			}
-			
-			.form__input{
-
-				border-bottom: 1px solid $brand-warning;
-				
-				&:active,
-				&:focus{
-
-					border-bottom: 1px solid $brand-warning;
-				}
-			}
-		}
-	}
-
-	&__control{
-
-		border-radius:0;
-		background: transparent;
-		border:none;
-		@include font($font-family-main, $font-weight-main,$gray-lighter);
-		font-size: 20px;
-		width:100%;
-		transition: all .3s ease-in-out;
-		
-		&::-webkit-input-placeholder {color:$gray-light;}
-		&::-moz-placeholder          {color:$gray-light;}/* Firefox 19+ */
-		&:-moz-placeholder           {color:$gray-light;}/* Firefox 18- */
-		&:-ms-input-placeholder      {color:$gray-light;}
-
-		&:active,
-		&:focus{
-
-			outline:none;
-
-		}
-	}
-
-	&__input{
-
-		border-bottom: 1px solid $gray;
-		@include padding-vertical(10px,10px);
-		transition: border-bottom .3s ease-in-out;
-		
-		
-		
-				
-		&:active,
-		&:focus{
-
-			border-bottom: 1px solid $gray-dark;
-		}
-
-		&:disabled{
-
-			border-bottom: 1px dashed $gray-light;
-
-		}
-		
-	}
-
-	&__label{
-
-		@include font($font-family-main, $font-weight-main,$gray-light);
-		font-size:14px;
-		display: block;
-		@include margin-vertical(0,15px);
-	}
-
-	&__textarea{
-		
-		resize:none;
-		
-		
-	}
-
-	&__progress{
-
-		background-color: $gray-darker;
-		height:2px;
-		
-		
-		&-bar{
-			
-			height:2px;
-			background-color: $brand-warning;
-			transition: width .3s ease-in-out;
-			
-			&--top{
-
-				position: relative;
-			}
-		}
-	}
-
-	&__current{
-		
-		&--top{
-
-			position: absolute;
-		    right: -15px;
-		    top: -42px;
-		    display: block;
-		    width: 30px;
-		    height: 37px;
-		    background: url(../images/sprite.png) 30px 0;
-		    text-align: center;
-		    padding-top: 8px;
-		    padding-left: 2px;
-		    font-size: 10px;
-		    @include font($font-family-main,$font-weight-rare,$gray-base);
-		    
-		   
-		    
-		}
-	}
-
-	&__counters{
-		
-		float:right;
-		@include margin-vertical(15px,0);
-	}
+// CALENDAR
+.calendar{
+	display: block;
+	margin: 0 auto;
+	@include margin-vertical(0,100px);
 }
 
 .datepicker{
@@ -272,25 +97,20 @@ body{
 	}
 
 	&--content{
-
 		background: transparent;
 		padding: 0;
 	}
 
 	&--cell{
-
 		border-radius: 50%;
 		cursor: default;
 		height:57px;
 		@include margin-vertical(0, 10px);
 		font-size: 18px;
-		
 
 		&.-selected-,
 		&.-focus-{
-
 			background-color: transparent;
-			
 			&.-focus-{
 
 				background-color: transparent;
@@ -303,44 +123,37 @@ body{
 		}
 
 		&.-current-{
-
 			color: $gray-lighter;
 			background: $brand-current;
 			cursor: pointer;
 			
 			&.-focus-,
 			&.-selected{
-
 				color: $gray-lighter;
 				background: $brand-current;
 			}
 		}
 
 		&-day{
-
 			width:14%;
+			
 			&.-other-month-{
 
 				opacity:0;
 			}
-
-
 		}
 
 		&-year{
 
 			&.-other-decade{
-
 				opacity:0;
 			}
-
 		}			
 	}
 
 	&--day{
 
 		&-name{
-
 			color: $gray-lighter;
 			font-size: 18px;
 			-webkit-flex: none;
@@ -358,11 +171,10 @@ body{
 			@include margin-custom(0,0,37px,0);
 		}
 	}
-
 }
 
+// TODAYS DATE
 .date-now{
-
 	border: 20px solid $gray-lighter;
 	display: block;
 	margin: 0 auto;
@@ -370,19 +182,14 @@ body{
     @include padding-custom(47px, 52px, 56px, 52px);
     @include margin-vertical(0,100px);
     width: 315px;
-    
-	
 	&__month{
 
 		font-size: 55px;
-		// @include margin-vertical(0, 30px);
 		margin:0;
 	}
 
 	&__day{
-
 		font-size: 140px;
-		// @include margin-vertical(0, 45px);
 		margin:0;
 	}
 
@@ -392,345 +199,174 @@ body{
 	}
 }
 
-.calendar{
+// FORM
+.form{
 
-	display: block;
-	margin: 0 auto;
-	@include margin-vertical(0,100px);
-	
-	
-}
-
-// POPUP
-
-.popup{
-	
-	background-color: $brand-milk;
-	color: $brand-bull;
-	@include padding-custom(30px, 15px, 30px, 15px);
-	width: 300px;
-	margin:0 auto;
-	text-align: center;
-	
-	
 	&-holder{
-
-		display: none;//temporary
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: $zindex-modal;
-		@include padding-vertical(30px,0);
-		overflow-y:auto;
-		
-	    
-	    &--show{
-
-	    	
-		    display: block;
-		    opacity:1;
-	    }
-	}
-	
-	&__img{
-
-		position: relative;   
-    	margin:0 auto;
-		
-		&-santa{
-			
-			width: 180px;
-		    position: absolute;
-		    left: 35px;
-    		top: -70px;
-		    transform: rotate(-15deg);
-			
-			
-					
-		}
-		
+		background: $brand-cave;
+		@include padding-custom(8px, 20px, 8px, 20px);
 	}
 
-	&__text{
-
-		@include font($font-family-main, $font-weight-ofthen,$brand-bull);
-		font-size: 40px;
-		text-transform: uppercase;
-		@include margin-custom(0, auto, 20px, auto);
-		
-		
-		&--extra{
-			
-			display: block;
-			font-weight: $font-weight-seldom;
-			font-size: 40px;
-			
-		}
-	}
-		
-	&__newyear{
-			
-		@include font($font-family-main, $font-weight-seldom,$brand-bull);
-		font-size: 20px;
-		text-transform: uppercase;
-		border: 14px solid $brand-bull;
-		@include padding-custom(25px, 78px, 25px, 78px);
-		@include margin-custom(0,auto,20px,auto);
-		
-	}
-
-
-	
-}
-
-// CLOCK
-
-.clock{
-
-	text-align: center;
-	
-	overflow: hidden;	
-	
-	&__analog{
-
-		background-color: $brand-primary;
-		@include padding-vertical(15px,0);
-		
-		
-		
-		&-holder{
-
-			position: relative;
-			height: 300px;
-			width: 300px;
-			border-radius:50%;
-			background-color: $brand-success;
-			margin:0 auto;
-
-		}
-		
-		&-time{
-			
-			height: 300px;
-			width: 300px;
-			background: url(../images/sprite.png) 25px 23px no-repeat;			
-			background-size: cover;
-			z-index: 1;
-    		position: relative;
-			
-			&:hover,
-			&:focus{
-				
-				+.clock__analog-hour{
-					opacity:1;
-					
-					&:before{
-						opacity:1;
-					}
-				}
-		
-			}
-			
-		}
-
-		&-hour{
-
-			width:0;
-			height:0;
-			position:absolute;
-			top: 51%;
-		    left: 35%;
-		    margin: 0px 0px 5px -19%;
-		    padding: 0px 11px 2px 32%;
-			-webkit-transform-origin:100% 50%;
-			-ms-transform-origin:100% 50%;
-			transform-origin:100% 50%;
-			border-radius:4px 0 0 4px;
-			background-color: $brand-danger;
-			opacity:0;
-			transition: all .3s ease-in-out;
-			
-			&:before{
-
-				content:"";
-				width: 40px;
-    			height: 40px;
-				border-radius:50%;
-				display: inline-block;
+	&__item{
+		@include margin-vertical(0,38px);
+		position: relative;
+		clear:both;
+		&--error{
+			&:after{
+				content:"Error message here!";
+				font-size: 14px;
+				color: $brand-warning;
 				position: absolute;
-				left: -35px;
-    			top: -17px;
-    			opacity:0;
-    			transition: all .3s ease-in-out;
-    			background-color: $brand-danger;
+				bottom:-27px;
+				left:0;
 			}
+			&:before{
+				content:"\26A0";
+				font-size: 24px;
+				color: $brand-warning;
+				position: absolute;
+				right:0;
+				padding-top: 45px;				
+			}			
+			.form__input{
+				border-bottom: 1px solid $brand-warning;
+				&:active,
+				&:focus{
 
-
-		}
-
-		&-minute{
-			
-		}
-
-		&-second{
-			
-		}
-
-		&-meridiem{
-
-			@include font($font-family-main, $font-weight-rare,$gray-base);
-			@include padding-custom(12px,10px,12px,10px);
-			font-size: 12px;
-			display: inline-block;
-			border-radius:50%;
-			color: $gray-lighter;
-			
-			&-holder{
-
-				clear: both;
-    			overflow: hidden;
-    			
+					border-bottom: 1px solid $brand-warning;
+				}
 			}
-			
-			&--active{
-				background-color: $brand-danger;
-			}
-		}
-
-		&-am{
-
-			float: left;
-    		@include margin-horizontal(0, 50px);
-		}
-
-		&-pm{
-
-			float: right;
-    		@include margin-horizontal(50px, 0);
 		}
 	}
 
-	&__digital{
+	&__control{
+		border-radius:0;
+		background: transparent;
+		border:none;
+		@include font($font-family-main, $font-weight-main,$gray-lighter);
+		font-size: 20px;
+		width:100%;
+		transition: all .3s ease-in-out;
+		
+		&::-webkit-input-placeholder {color:$gray-light;}
+		&::-moz-placeholder          {color:$gray-light;}/* Firefox 19+ */
+		&:-moz-placeholder           {color:$gray-light;}/* Firefox 18- */
+		&:-ms-input-placeholder      {color:$gray-light;}
 
-		font-size: 40px;
-		@include padding-custom(15px, 0, 15px, 0);
-		background-color: $brand-danger;
-		
-		
-		
-		&-devider{
+		&:active,
+		&:focus{
 
-			-webkit-animation: mymove 1s ease infinite;
-			   -moz-animation: mymove 1s ease infinite;
-			     -o-animation: mymove 1s ease infinite;
-			        animation: mymove 1s ease infinite;
+			outline:none;
+		}
+	}
+
+	&__input{
+		border-bottom: 1px solid $gray;
+		@include padding-vertical(10px,10px);
+		transition: border-bottom .3s ease-in-out;		
+		&:active,
+		&:focus{
+			border-bottom: 1px solid $gray-dark;
+		}
+		&:disabled{
+			border-bottom: 1px dashed $gray-light;
+		}
+	}
+
+	&__label{
+		@include font($font-family-main, $font-weight-main,$gray-light);
+		font-size:14px;
+		display: block;
+		@include margin-vertical(0,10px);
+	}
+
+	&__textarea{
+
+		resize:none;
+	}
+
+	&__progress{
+		background-color: $gray-darker;
+		height:2px;
+		&--bg{
+			height: 2px;
+			background: url(../images/textarea-bg.png) repeat-x;	
 		}
 		
-		&-meridiem{
-			
-			font-size: 15px;
-			@include margin-horizontal(0,-10px);
-			color: $brand-cream;
+		&-bar{
+			height:2px;
+			background-color: $brand-warning;
+			transition: width .3s ease-in-out;
+			&--top{
+				position: relative;
+			}
 		}
+	}
 
-		&-minutes{
-			
-			color: $brand-cream;
+	&__current{
+
+		&--top{
+			position: absolute;
+		    right: -15px;
+		    top: -42px;
+		    display: block;
+		    width: 30px;
+		    height: 37px;
+		    background: url(../images/sprite.png) 30px 0;
+		    text-align: center;
+		    padding-top: 8px;
+		    padding-left: 2px;
+		    font-size: 10px;
+		    @include font($font-family-main,$font-weight-rare,$gray-base);    
 		}
-		
+	}
+
+	&__counters{
+		float:right;
+		@include margin-vertical(15px,0);
 	}
 }
 
-/* CLOCK DEVIDER ANIMATION */
-
-@-webkit-keyframes mymove {
-	 0% {
-	 		opacity: 1.0;
-	    
-		}
-
-	50% {
-	    opacity: 0;
-	    
-	}
-
-	100% {
-	    opacity: 1.0;
-	    
-	}	
-}
-
-@-moz-keyframes mymove {
-    0% {
-        opacity: 1.0;
-        
-    }
-
-    50% {
-        opacity: 0;
-        
-    }
-
-    100% {
-        opacity: 1.0;
-        
-    };
-}
-
-
+// HIDDEN MENU
 .menu{
-
 	position: fixed;
-    
-    top: -431px; //added
-    left:0;//added
-    right:0;//added
+    top: -431px;
+    left:0;
+    right:0;
     z-index:$zindex-navbar-fixed;
-    transition: all .3s ease-in-out;//added
-    
+    transition: all .3s ease-in-out;
     &.menu--open{
 
-    	
-    	top: 0; //added
-
+    	top: 0; 
     }
 	
 	&__icons{
 
-		
-		text-align: center;//added
+		text-align: center;
 		
 		&-hamburger{
-
 			position: relative;
 			@include padding-vertical(0,44px);
-
-			
-			
+						
 			&-holder{
 
 				background-color: $brand-bull;
 				@include padding-custom(20px, 10px, 22px, 10px);
 				width: 80px;
 				height: 80px;
-				display: inline-block; //added
-				vertical-align: top; //added
-				@include margin-horizontal(-4px,0); //added
+				display: inline-block;
+				vertical-align: top;
+				@include margin-horizontal(-4px,0);
 				transition: all .3s ease-in-out;
 				
 				&:hover,
 				&:focus{
 
 					background-color: lighten($brand-bull,10%);
-
 				}
-
 			}
 			
 			span{
-
 				display: block;
 				position: absolute;
 				height: 5px;
@@ -740,8 +376,8 @@ body{
 				transform: rotate(0deg);
 				transition: .25s ease-in-out;
 				
-				
 				&:nth-child(1){
+
 					top:0;
 				}
 
@@ -756,9 +392,9 @@ body{
 				}
 
 				&:nth-child(4){
+
 					top:36px;
-				}
-				
+				}				
 			}
 
 			&.hamburger-open{
@@ -789,16 +425,13 @@ body{
 		}
 
 		&-item{
-
-			width: 80px; //added
-			display: inline-block; //added
-			vertical-align: top; //added
-			@include margin-horizontal(-4px,0); //added
+			width: 80px; 
+			display: inline-block; 
+			vertical-align: top;
+			@include margin-horizontal(-4px,0);
 			font-size: 36px;
 			text-align: center;
-			@include padding-vertical(18px, 19px);
-			
-			
+			@include padding-vertical(18px, 19px);			
 		}
 
 		&-facebook{
@@ -810,7 +443,6 @@ body{
 			&:focus{
 
 				background-color: lighten($brand-floor,10%);
-
 			}
 		}
 
@@ -823,7 +455,6 @@ body{
 			&:focus{
 				
 				background-color: lighten($brand-dram,10%);
-
 			}
 		}
 
@@ -834,20 +465,17 @@ body{
 			
 			&:hover,
 			&:focus{
-				
-				background-color: lighten($brand-good,10%);
 
+				background-color: lighten($brand-good,10%);
 			}
 		}
 	}
 
 	&-holder{
-		
 
 		transition: background-color .3s ease-in-out;
 		
 		&--open{
-
 			position: fixed;
 			top:0;
 			left:0;
@@ -859,65 +487,224 @@ body{
 	}
 }
 
+// CLOCK
+.clock{
+	text-align: center;
+	overflow: hidden;	
+	
+	&__analog{
+		background-color: $brand-primary;
+		@include padding-vertical(15px,0);
+				
+		&-holder{
+			position: relative;
+			height: 300px;
+			width: 300px;
+			border-radius:50%;
+			background-color: $brand-success;
+			margin:0 auto;
+		}
+		
+		&-time{
+			height: 300px;
+			width: 300px;
+			background: url(../images/sprite.png) 25px 23px no-repeat;			
+			background-size: cover;
+			z-index: 1;
+    		position: relative;
+			
+			&:hover,
+			&:focus{
+				
+				+.clock__analog-hour{
+
+					opacity:1;
+					
+					&:before{
+
+						opacity:1;
+					}
+				}
+			}	
+		}
+
+		&-hour{
+
+			width:0;
+			height:0;
+			position:absolute;
+			top: 51%;
+		    left: 35%;
+		    margin: 0px 0px 5px -20%;
+    		padding: 0px 11px 2px 32%;
+			-webkit-transform-origin:100% 50%;
+			-ms-transform-origin:100% 50%;
+			transform-origin:100% 50%;
+			border-radius:4px 0 0 4px;
+			background-color: $brand-danger;
+			opacity:0;
+			transition: all .3s ease-in-out;
+			
+			&:before{
+
+				content:"";
+				width: 40px;
+    			height: 40px;
+				border-radius:50%;
+				display: inline-block;
+				position: absolute;
+				left: -32px;
+    			top: -20px;
+    			opacity:0;
+    			transition: all .3s ease-in-out;
+    			background-color: $brand-danger;
+			}
+		}
+
+		&-meridiem{
+			@include font($font-family-main, $font-weight-rare,$gray-base);
+			@include padding-custom(12px,10px,12px,10px);
+			font-size: 12px;
+			display: inline-block;
+			border-radius:50%;
+			color: $gray-lighter;
+			
+			&-holder{
+				clear: both;
+    			overflow: hidden;
+			}
+			
+			&--active{
+
+				background-color: $brand-danger;
+			}
+		}
+
+		&-am{
+			float: left;
+    		@include margin-horizontal(0, 50px);
+		}
+
+		&-pm{
+
+			float: right;
+    		@include margin-horizontal(50px, 0);
+		}
+	}
+
+	&__digital{
+
+		font-size: 40px;
+		@include padding-custom(15px, 0, 15px, 0);
+		background-color: $brand-danger;
+				
+		&-devider{
+
+			-webkit-animation: mymove 1s ease infinite;
+			   -moz-animation: mymove 1s ease infinite;
+			     -o-animation: mymove 1s ease infinite;
+			        animation: mymove 1s ease infinite;
+		}
+		
+		&-meridiem{
+			
+			font-size: 15px;
+			@include margin-horizontal(0,-10px);
+			color: $brand-cream;
+		}
+
+		&-minutes{
+			
+			color: $brand-cream;
+		}		
+	}
+}
+
+// CLOCK DEVIDER ANIMATION
+@-webkit-keyframes mymove {
+
+	0% {opacity: 1.0;}
+	50% {opacity: 0;}
+	100% {opacity: 1.0;}	
+}
+
+@-moz-keyframes mymove {
+
+	0% {opacity: 1.0;}
+	50% {opacity: 0;}
+	100% {opacity: 1.0;};
+}
+
+// POPUP
+.popup{
+	background-color: $brand-milk;
+	color: $brand-bull;
+	@include padding-custom(30px, 15px, 30px, 15px);
+	width: 300px;
+	margin:0 auto;
+	text-align: center;
+	
+	&-holder{
+		display: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: $zindex-modal;
+		@include padding-vertical(30px,0);
+		overflow-y:auto;
+	    &--show{
+		    display: block;
+		    opacity:1;
+	    }
+	}
+	
+	&__img{
+		position: relative;   
+    	margin:0 auto;
+		&-santa{
+			width: 180px;
+		    position: absolute;
+		    left: 35px;
+    		top: -70px;
+		    transform: rotate(-15deg);									
+		}	
+	}
+
+	&__text{
+		@include font($font-family-main, $font-weight-ofthen,$brand-bull);
+		font-size: 40px;
+		text-transform: uppercase;
+		@include margin-custom(0, auto, 20px, auto);				
+		&--extra{			
+			display: block;
+			font-weight: $font-weight-seldom;
+			font-size: 40px;			
+		}
+	}
+		
+	&__newyear{	
+		@include font($font-family-main, $font-weight-seldom,$brand-bull);
+		font-size: 20px;
+		text-transform: uppercase;
+		border: 14px solid $brand-bull;
+		@include padding-custom(25px, 78px, 25px, 78px);
+		@include margin-custom(0,auto,20px,auto);	
+	}	
+}
 
 
 // RESPONSIVE
-
-
 @media (min-width:$screen-sm){
 	
+	// CONTAINER
 	.container{
 
 		width:750px;
 	}
-
-	.date-now{
-
-		display: inline-block;
-		vertical-align: top;
-		@include margin-vertical(5px, 0);
-		width: auto;
-	}
-
-	.calendar{
-
-		display: inline-block;
-		vertical-align: top;
-		margin:0;
-	}
-
-	.datepicker{
-
-		width:410px;
-		
-		&--cell{
-
-			font-size: 20px;
-			height:60px;
-			
-			
-		}
-
-		&--day{
-
-
-
-			&-name{
-				
-				font-size: 20px;
-				
-			}
-		}
-
-		&--days{
-			
-			&-name{
-
-				@include margin-custom(0,0,35px,0);
-			}
-		}
-	}
-
+	
+	// MAIN
 	.main{
 
 		&__calendar{
@@ -929,11 +716,9 @@ body{
 		}
 		
 		&__form{
-			
 			width: 58%;
 			margin:0 auto;
-			display: block;
-			
+			display: block;	
 		}
 
 		&__img{
@@ -951,7 +736,50 @@ body{
 			}
 		}
 	}
+	
+	// CALENDAR
+	.calendar{
+		display: inline-block;
+		vertical-align: top;
+		margin:0;
+	}
 
+	.datepicker{
+
+		width:410px;
+		
+		&--cell{
+
+			font-size: 20px;
+			height:60px;	
+		}
+
+		&--day{
+
+			&-name{
+				
+				font-size: 20px;	
+			}
+		}
+
+		&--days{
+			
+			&-name{
+
+				@include margin-custom(0,0,35px,0);
+			}
+		}
+	}
+	
+	// TODAYS DATE
+	.date-now{
+		display: inline-block;
+		vertical-align: top;
+		@include margin-vertical(5px, 0);
+		width: auto;
+	}
+	
+	// POPUP
 	.popup{
 
 		width: 700px;
@@ -1001,25 +829,18 @@ body{
 
 @media (min-width:$screen-md){
 	
+	// CONTAINER
 	.container{
 
 		width:970px;
 	}
-
+	
+	// MAIN
 	.main{
 		
-		&__calendar{
-			
-			// width: 100%;
-   //  		text-align: center;
-   //  		
-		}
-
 		&__form{
 
-			// display: block;
 			width: 45%;
-			// margin:0 auto;
 		}
 
 		&__content{
@@ -1027,12 +848,9 @@ body{
 			position: relative;
 			top:0;
 	    	right: 0;
-	    	
-	    		
-			
+	    				
 			&--move{
-				
-				
+
 	    		right: 595px;
 			}
 		}
@@ -1041,9 +859,7 @@ body{
 
 			&-santa{
 
-				
-			    left: 30px;
-    						  	    			    
+			    left: 30px;				  	    			    
 			}
 			
 			&-merry-xmas{
@@ -1051,12 +867,94 @@ body{
 				width: 900px;
 			}
 		}
-
-
 	}
 
-	.popup{
+	// HIDDEN MENU
+	.menu{
+		right: -595px;
+	    top: 0;
+	    left: auto;
+    	&.menu--open{
+
+			right:0; 		
+    	}
+
+    	&__icons{
+
+    		position: absolute;
+		    left: -96px;
+		    top: 0;
+			@include margin-vertical(160px, 0);
+			
+			&-hamburger{
+					
+				&-holder{
+					height: 92px;
+					width: 96px;
+					display: block;
+					@include margin-horizontal(0,0);					
+				}
+
+				span{
+
+					height: 7px;	
+				}
+
+				&.hamburger-open{
+
+					span{
+						
+						&:nth-child(1){
+
+							top:20px;
+	  						
+						}
+
+						&:nth-child(4){
+
+							top:20px;
+						}
+					}
+				}
+			}
+
+			&-item{
+
+				width: 96px;
+				display: block;
+				@include margin-horizontal(0,0);
+				@include padding-vertical(24px, 25px);
+			}
+    	}
+	}
+
+	// CLOCK
+	.clock{
+
+		width: 595px;
 		
+		&__digital{
+			font-size: 80px;
+			@include padding-custom(31px, 0, 33px, 0);
+			&-meridiem{
+
+				font-size: 30px;
+			}
+		}
+
+		&__analog{
+			@include padding-vertical(30px,0);
+			
+			&-meridiem{
+				@include padding-custom(20px,17px,20px,17px);
+				font-size: 20px;
+			}
+		}
+	}	
+	
+	// POPUP
+	.popup{
+
 		width:900px;
 		@include padding-custom(70px, 100px, 45px, 100px);
 		
@@ -1082,129 +980,31 @@ body{
 			
 			&-santa{
 			
-			width: 375px;
-		    left: -116px;
-		    top: -26px;						
-		}
-
-		&-trees{
-
-			width: 523px;
-			position: absolute;
-			right: -77px;
-			top: 49px;
-
-		}		
-		}
-	}
-
-	.menu{
-
-		right: -595px;
-	    top: 0;
-	    left: auto;
-    	
-    	&.menu--open{
-			
-			right:0;
-    		
-    	}
-
-    	&__icons{
-
-    		position: absolute;
-		    left: -96px;
-		    top: 0;
-			@include margin-vertical(160px, 0);
-			
-			&-hamburger{
-				
-				
-				&-holder{
-					height: 92px;
-					width: 96px;
-					display: block;
-					vertical-align: none;
-					@include margin-horizontal(0,0);
-					
-				}
-
-				span{
-
-					height: 7px;	
-				}
-
-				&.hamburger-open{
-
-					span{
-						
-						&:nth-child(1){
-							top:20px;
-	  						
-						}
-
-						&:nth-child(4){
-							top:20px;
-						}
-					}
-				}
+				width: 375px;
+			    left: -116px;
+			    top: -26px;						
 			}
 
-			&-item{
+			&-trees{
 
-				width: 96px;
-				display: block;
-				vertical-align: none;
-				@include margin-horizontal(0,0);
-				@include padding-vertical(24px, 25px);
-			}
-    	}
-	}
-
-	.clock{
-
-		width: 595px;
-		
-		&__digital{
-
-			font-size: 80px;
-			@include padding-custom(31px, 0, 33px, 0);
-			
-			&-meridiem{
-			
-				font-size: 30px;
-				
-			}
-		}
-
-		&__analog{
-
-			@include padding-vertical(30px,0);
-			
-			&-meridiem{
-
-				@include padding-custom(20px,17px,20px,17px);
-				font-size: 20px;
-
-			}
+				width: 523px;
+				position: absolute;
+				right: -77px;
+				top: 49px;
+			}		
 		}
 	}
-
-	
 }
 
 @media (min-width:$screen-lg){
 	
+	// COMTAINER
 	.container{
 
 		width:1170px;
 	}
-
-	.date-now{
-
-		@include padding-custom(47px, 45px, 56px, 45px);
-	}
-
+	
+	// MAIN
 	.main{
 		
 		&__calendar{
@@ -1226,20 +1026,24 @@ body{
 
 			&-santa{
 
-				top: -500px;
-			    
-			    left: -140px;
+				top: -545px;
+    			left: -200px;
 			}
 			
 			&-merry-xmas{
 
 				width: 1000px;
 			}
-		}
-
-		
+		}	
 	}
 
+	// TODAYS DATE
+	.date-now{
+
+		@include padding-custom(47px, 45px, 56px, 45px);
+	}
+
+	// POPUP
 	.popup{
 		
 		width: 980px;
@@ -1257,5 +1061,3 @@ body{
 		}
 	}
 }
-
-

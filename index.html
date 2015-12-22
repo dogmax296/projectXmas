@@ -6,10 +6,7 @@
 		<title>DOCUMENT</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-
-
 		<!-- FONT -->
-
 		<link href='https://fonts.googleapis.com/css?family=Roboto:500,700,300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
 		<!-- CSS -->
@@ -19,18 +16,18 @@
 	<body>
 		
 		<div class="wrapper">
-		
 
 			<main class="main">
 
 				<div class="container">
-					
+
+					<!-- START main__content -->
 					<div class="main__content">
 						
+						<!-- START main__calendar -->
 						<div class="main__calendar">
 
 							<!-- START date-now -->
-
 							<div class="date-now">
 								
 								<p class="date-now__month"></p>
@@ -38,21 +35,20 @@
 								<p class="date-now__year"></p>
 
 							</div>
-
 							<!-- START date-now -->
 
 							<!-- START calendar -->
-
 							<div class="calendar">
 								
 								<div class="datepicker-here" data-language='en'></div>
 
 							</div>
-
 							<!-- END calendar -->
-							
-						</div>
 
+						</div>
+						<!-- END main__calendar -->
+
+						<!-- START main__form -->
 						<div class="main__form">
 
 							<!-- START form -->
@@ -109,19 +105,19 @@
 
 										<label for="form__textarea--top" class="form__label">Label</label>
 
-										<div class="form__progress">
+										<div class="form__progress--bg">
 									        <div class="form__progress-bar form__progress-bar--top" style="width: 0%;">
 									            <span class = "form__current form__current--top">0%</span>
 									        </div>
 									    </div>
 
-										<textarea class="form__control form__textarea form__textarea--top" maxlength="132" name="" rows="6" id="form__textarea--top" placeholder="Type your text"></textarea>
+										<textarea class="form__control form__textarea form__textarea--top" maxlength="132" rows="6" id="form__textarea--top" placeholder="Type your text"></textarea>
 
 									</div>
 
 									<div class="form__item">
 
-										<label for="form__textarea--bottom" class="form__label">Label</label><textarea class="form__control form__textarea form__textarea--bottom" maxlength="132" name="" rows="6" id="form__textarea--bottom" placeholder="Type your text"></textarea>
+										<label for="form__textarea--bottom" class="form__label">Label</label><textarea class="form__control form__textarea form__textarea--bottom" maxlength="132" rows="6" id="form__textarea--bottom" placeholder="Type your text"></textarea>
 
 										<div class="form__progress">
 									        <div class="form__progress-bar form__progress-bar--bottom" style="width: 0%;"></div>
@@ -141,30 +137,35 @@
 							</div>
 
 							<!-- END form -->
-
 						</div>
+						<!-- END main__form -->
 
 					</div>
+					<!-- END main__content -->
 
+					<!-- START main__img -->
 					<div class="main__img">
 
-
+						<!-- START santa img -->
 						<div class="main__img-santa">
 							
 							<object data="images/santa.svg" name="Main__Santa" type="image/svg+xml" width="100%" height="100%">Для просмотра SVG графики Вам необходимо обновить браузер</object>
 
 						</div>
-						
+						<!-- END santa img -->
+
+						<!-- START santa img -->
 						<div class="main__img-merry-xmas">
 							
 							<object data="images/merry-xmas.svg" name="Main__Xmas" type="image/svg+xml" width="100%" height="100%">Для просмотра SVG графики Вам необходимо обновить браузер</object>
 
 						</div>
+						<!-- END santa img -->
 
 					</div>
+					<!-- END main__img -->
 
 					<!-- START popup -->
-
 					<div class="popup-holder">
 
 						<div class="popup">
@@ -179,7 +180,7 @@
 
 									</span>
 
-									<span>осталось<span>
+									<span>осталось</span>
 
 								</div>
 
@@ -212,16 +213,12 @@
 						</div>
 
 					</div>
-
 					<!-- END popup -->
 
 					<!-- START  menu-->
-
 					<div class="menu-holder">
 
 						<div class="menu">
-
-							
 
 							<!-- START clock -->
 
@@ -298,32 +295,27 @@
 							</div>
 							
 						</div>
-
 					</div>
-
 					<!-- END  menu-->
-					
 
 				</div>
-					
+
 			</main>
 
 		</div>
 
-		
+		<!-- JQUERY -->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-	<!-- JQUERY -->
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<!-- CALENDAR JS -->
+		<script src="js/datepicker.min.js"></script>
+		<script src="js/datepicker.en.js"></script>
 
-	<!-- CALENDAR JS -->
-	<script src="js/datepicker.min.js"></script>
-	<script src="js/datepicker.en.js"></script>
+		<!-- MOMENT JS -->
+		<script src="js/moment.js"></script>
 
-	<!-- MAIN JS -->
-	<script src="js/moment.js"></script>
-
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+		<!-- MAIN JS -->
+		<script src="js/main.js"></script>
 
 	</body>
 

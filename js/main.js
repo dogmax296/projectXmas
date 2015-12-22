@@ -1,7 +1,5 @@
 // Progress for textarea
 
-
-
 jQuery(document).ready(function() {
 
     // TOP
