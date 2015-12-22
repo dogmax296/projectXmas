@@ -918,8 +918,6 @@ html {
 }
 
 * {
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
   box-sizing: border-box;
 }
 
@@ -942,6 +940,7 @@ body {
 .main__img {
   position: relative;
   margin: 0 auto;
+  display: none;
 }
 
 .main__img-santa {
@@ -963,8 +962,15 @@ body {
 }
 
 .main__content {
-  z-index: 1200;
+  z-index: 1020;
   position: relative;
+  top: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+.main__content--move {
+  top: 511px;
 }
 
 .form-holder {
@@ -996,8 +1002,8 @@ body {
   font-size: 24px;
   color: #f85a44;
   position: absolute;
-  bottom: -25px;
   right: 0;
+  padding-top: 45px;
 }
 
 .form__item--error .form__input {
@@ -1018,6 +1024,8 @@ body {
   color: white;
   font-size: 20px;
   width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
   /* Firefox 19+ */
   /* Firefox 18- */
 }
@@ -1047,6 +1055,8 @@ body {
   border-bottom: 1px solid #5f676a;
   padding-top: 10px;
   padding-bottom: 10px;
+  -webkit-transition: border-bottom 0.3s ease-in-out;
+          transition: border-bottom 0.3s ease-in-out;
 }
 
 .form__input:active,
@@ -1080,6 +1090,8 @@ body {
 .form__progress-bar {
   height: 2px;
   background-color: #f85a44;
+  -webkit-transition: width 0.3s ease-in-out;
+          transition: width 0.3s ease-in-out;
 }
 
 .form__progress-bar--top {
@@ -1114,7 +1126,6 @@ body {
   font-weight: 400;
   color: white;
   font-size: 20px;
-  width: 410px;
   border: none;
   background: transparent;
   display: block;
@@ -1133,8 +1144,10 @@ body {
 .datepicker--cell {
   border-radius: 50%;
   cursor: default;
-  height: 67px;
-  z-index: 0;
+  height: 40px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 
 .datepicker--cell.-selected-,
@@ -1179,7 +1192,7 @@ body {
 
 .datepicker--day-name {
   color: white;
-  font-size: 20px;
+  font-size: 12px;
   -webkit-flex: none;
   -ms-flex: none;
   -webkit-box-flex: none;
@@ -1190,7 +1203,7 @@ body {
 .datepicker--days-names {
   margin-top: 0;
   margin-right: 0;
-  margin-bottom: 40px;
+  margin-bottom: 37px;
   margin-left: 0;
 }
 
@@ -1231,26 +1244,28 @@ body {
 }
 
 .popup {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   color: #ff1010;
-  padding-top: 70px;
-  padding-right: 100px;
-  padding-bottom: 45px;
-  padding-left: 100px;
-  width: 980px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  width: 300px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .popup-holder {
   display: none;
-  opacity: 0;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1050;
-  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 30px;
+  padding-bottom: 0;
+  overflow-y: auto;
 }
 
 .popup-holder--show {
@@ -1260,76 +1275,67 @@ body {
 
 .popup__img {
   position: relative;
-  padding-bottom: 200px;
+  margin: 0 auto;
 }
 
 .popup__img-santa {
-  width: 375px;
+  width: 180px;
   position: absolute;
-  left: -116px;
-  top: -26px;
+  left: 35px;
+  top: -70px;
   -webkit-transform: rotate(-15deg);
       -ms-transform: rotate(-15deg);
           transform: rotate(-15deg);
-}
-
-.popup__img-santa-svg {
-  fill: #ff1010;
-}
-
-.popup__img-trees {
-  width: 523px;
-  position: absolute;
-  right: -77px;
-  top: 49px;
 }
 
 .popup__text {
   font-family: "Roboto";
   font-weight: 300;
   color: #ff1010;
-  font-size: 73px;
+  font-size: 40px;
   text-transform: uppercase;
-  display: inline-block;
-  vertical-align: top;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
 }
 
 .popup__text--extra {
   display: block;
   font-weight: 700;
-  font-size: 44px;
+  font-size: 40px;
 }
 
 .popup__newyear {
-  display: inline-block;
-  vertical-align: top;
   font-family: "Roboto";
   font-weight: 700;
   color: #ff1010;
-  font-size: 44px;
+  font-size: 20px;
   text-transform: uppercase;
   border: 14px solid #ff1010;
   padding-top: 25px;
   padding-right: 78px;
   padding-bottom: 25px;
   padding-left: 78px;
-  margin-right: 0;
-  margin-left: 32px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
 }
 
 .clock {
   text-align: center;
-  width: 595px;
   overflow: hidden;
 }
 
 .clock__analog {
   background-color: #933e3e;
-  padding-top: 30px;
+  padding-top: 15px;
   padding-bottom: 0;
 }
 
 .clock__analog-holder {
+  position: relative;
   height: 300px;
   width: 300px;
   border-radius: 50%;
@@ -1338,21 +1344,21 @@ body {
 }
 
 .clock__analog-time {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
+  height: 300px;
+  width: 300px;
   background: url(../images/sprite.png) 25px 23px no-repeat;
   background-size: cover;
+  z-index: 1;
+  position: relative;
 }
 
-.clock__analog-time:hover .clock__analog-hour,
-.clock__analog-time:focus .clock__analog-hour {
+.clock__analog-time:hover + .clock__analog-hour,
+.clock__analog-time:focus + .clock__analog-hour {
   opacity: 1;
 }
 
-.clock__analog-time:hover .clock__analog-hour:before,
-.clock__analog-time:focus .clock__analog-hour:before {
+.clock__analog-time:hover + .clock__analog-hour:before,
+.clock__analog-time:focus + .clock__analog-hour:before {
   opacity: 1;
 }
 
@@ -1360,10 +1366,10 @@ body {
   width: 0;
   height: 0;
   position: absolute;
-  top: 50%;
-  left: 37%;
-  margin: 0px 0px 5px -18%;
-  padding: 0px 11px 2px 29%;
+  top: 51%;
+  left: 35%;
+  margin: 0px 0px 5px -19%;
+  padding: 0px 11px 2px 32%;
   -webkit-transform-origin: 100% 50%;
   -ms-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
@@ -1379,8 +1385,8 @@ body {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
-  left: -40px;
-  top: -18px;
+  left: -35px;
+  top: -17px;
   opacity: 0;
   -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
@@ -1391,11 +1397,11 @@ body {
   font-family: "Roboto";
   font-weight: 500;
   color: black;
-  padding-top: 20px;
-  padding-right: 17px;
-  padding-bottom: 20px;
-  padding-left: 17px;
-  font-size: 20px;
+  padding-top: 12px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  font-size: 12px;
   display: inline-block;
   border-radius: 50%;
   color: white;
@@ -1423,10 +1429,10 @@ body {
 }
 
 .clock__digital {
-  font-size: 80px;
-  padding-top: 31px;
+  font-size: 40px;
+  padding-top: 15px;
   padding-right: 0;
-  padding-bottom: 33px;
+  padding-bottom: 15px;
   padding-left: 0;
   background-color: #6b0b0b;
 }
@@ -1437,7 +1443,7 @@ body {
 }
 
 .clock__digital-meridiem {
-  font-size: 30px;
+  font-size: 15px;
   margin-right: 0;
   margin-left: -10px;
   color: rgba(255, 255, 255, 0.5);
@@ -1462,25 +1468,26 @@ body {
 
 .menu {
   position: fixed;
-  right: -595px;
-  top: 0;
+  top: -431px;
+  left: 0;
+  right: 0;
   z-index: 1030;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 }
 
 .menu.menu--open {
-  right: 0px;
+  top: 0;
 }
 
 .menu__icons {
-  width: 96px;
-  float: left;
-  margin-top: 160px;
-  margin-bottom: 0;
+  text-align: center;
 }
 
 .menu__icons-hamburger {
   position: relative;
-  height: 51px;
+  padding-top: 0;
+  padding-bottom: 44px;
 }
 
 .menu__icons-hamburger-holder {
@@ -1489,12 +1496,18 @@ body {
   padding-right: 10px;
   padding-bottom: 22px;
   padding-left: 10px;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+  margin-left: 0;
 }
 
 .menu__icons-hamburger span {
   display: block;
   position: absolute;
-  height: 7px;
+  height: 5px;
   width: 100%;
   background: white;
   opacity: 1;
@@ -1524,7 +1537,7 @@ body {
 }
 
 .menu__icons-hamburger.hamburger-open span:nth-child(1) {
-  top: 20px;
+  top: 16px;
   -webkit-transform: rotate(135deg);
       -ms-transform: rotate(135deg);
           transform: rotate(135deg);
@@ -1541,17 +1554,22 @@ body {
 }
 
 .menu__icons-hamburger.hamburger-open span:nth-child(4) {
-  top: 20px;
+  top: 16px;
   -webkit-transform: rotate(-135deg);
       -ms-transform: rotate(-135deg);
           transform: rotate(-135deg);
 }
 
 .menu__icons-item {
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+  margin-left: 0;
   font-size: 36px;
   text-align: center;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  padding-top: 18px;
+  padding-bottom: 19px;
 }
 
 .menu__icons-facebook {
@@ -1564,6 +1582,11 @@ body {
 
 .menu__icons-mail {
   background-color: #0787ff;
+}
+
+.menu-holder {
+  -webkit-transition: background-color 0.3s ease-in-out;
+          transition: background-color 0.3s ease-in-out;
 }
 
 .menu-holder--open {
@@ -1592,6 +1615,22 @@ body {
     vertical-align: top;
     margin: 0;
   }
+  .datepicker {
+    width: 410px;
+  }
+  .datepicker--cell {
+    font-size: 20px;
+    height: 60px;
+  }
+  .datepicker--day-name {
+    font-size: 20px;
+  }
+  .datepicker--days-name {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 35px;
+    margin-left: 0;
+  }
   .main__calendar {
     width: 100%;
     text-align: center;
@@ -1602,6 +1641,48 @@ body {
     width: 58%;
     margin: 0 auto;
     display: block;
+  }
+  .popup {
+    width: 700px;
+    padding-top: 60px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+  }
+  .popup__text {
+    font-size: 50px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .popup__text--extra {
+    font-size: 30px;
+  }
+  .popup__newyear {
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 32px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .popup__img {
+    padding-top: 0;
+    padding-bottom: 100px;
+  }
+  .popup__img-santa {
+    width: 300px;
+    left: -27px;
+    top: -92px;
+  }
+  .popup__img-trees {
+    width: 370px;
+    position: absolute;
+    right: -10px;
+    top: -20px;
   }
 }
 
@@ -1614,11 +1695,108 @@ body {
   }
   .main__content {
     position: relative;
-    left: 0;
+    top: 0;
+    right: 0;
   }
   .main__content--move {
-    position: relative;
-    left: -595px;
+    right: 595px;
+  }
+  .popup {
+    width: 900px;
+    padding-top: 70px;
+    padding-right: 100px;
+    padding-bottom: 45px;
+    padding-left: 100px;
+  }
+  .popup__text {
+    font-size: 60px;
+  }
+  .popup__text--extra {
+    font-size: 44px;
+  }
+  .popup__newyear {
+    font-size: 30px;
+    margin-right: 0;
+    margin-left: 28px;
+  }
+  .popup__img {
+    padding-bottom: 200px;
+  }
+  .popup__img-santa {
+    width: 375px;
+    left: -116px;
+    top: -26px;
+  }
+  .popup__img-trees {
+    width: 523px;
+    position: absolute;
+    right: -77px;
+    top: 49px;
+  }
+  .menu {
+    right: -595px;
+    top: 0;
+    left: auto;
+  }
+  .menu.menu--open {
+    right: 0;
+  }
+  .menu__icons {
+    position: absolute;
+    left: -96px;
+    top: 0;
+    margin-top: 160px;
+    margin-bottom: 0;
+  }
+  .menu__icons-hamburger-holder {
+    height: 92px;
+    width: 96px;
+    display: block;
+    vertical-align: none;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .menu__icons-hamburger span {
+    height: 7px;
+  }
+  .menu__icons-hamburger.hamburger-open span:nth-child(1) {
+    top: 20px;
+  }
+  .menu__icons-hamburger.hamburger-open span:nth-child(4) {
+    top: 20px;
+  }
+  .menu__icons-item {
+    width: 96px;
+    display: block;
+    vertical-align: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+  .clock {
+    width: 595px;
+  }
+  .clock__digital {
+    font-size: 80px;
+    padding-top: 31px;
+    padding-right: 0;
+    padding-bottom: 33px;
+    padding-left: 0;
+  }
+  .clock__digital-meridiem {
+    font-size: 30px;
+  }
+  .clock__analog {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+  .clock__analog-meridiem {
+    padding-top: 20px;
+    padding-right: 17px;
+    padding-bottom: 20px;
+    padding-left: 17px;
+    font-size: 20px;
   }
 }
 
@@ -1643,6 +1821,21 @@ body {
     width: 34%;
     margin-right: 0;
     margin-left: 60px;
+  }
+  .popup {
+    width: 980px;
+    padding-top: 70px;
+    padding-right: 100px;
+    padding-bottom: 45px;
+    padding-left: 100px;
+  }
+  .popup__text {
+    font-size: 73px;
+  }
+  .popup__newyear {
+    font-size: 44px;
+    margin-right: 0;
+    margin-left: 32px;
   }
 }
 

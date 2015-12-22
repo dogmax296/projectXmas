@@ -22,7 +22,7 @@ html{
 }
 
 *{
-	transition: all .3s ease-in-out;
+	
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -51,6 +51,7 @@ body{
 		
 		position: relative;
 		margin: 0 auto;
+		display: none;//temporary
 
 		&-santa{
 
@@ -71,8 +72,15 @@ body{
 
 	&__content{
 		
-		z-index:1200;
+		z-index:1020;
 		position: relative;
+		top:0;//added
+		transition: all .3s ease-in-out;//added
+		
+		&--move{
+			
+			top:511px;
+		}
 	}
 	
 	
@@ -93,7 +101,6 @@ body{
 		
 		@include margin-vertical(0,45px);
 		position: relative;
-		
 		clear:both;
 		
 		&--error{
@@ -117,8 +124,9 @@ body{
 				font-size: 24px;
 				color: $brand-warning;
 				position: absolute;
-				bottom:-25px;
-				right:0;				
+				// bottom:-25px;
+				right:0;
+				padding-top: 45px;				
 			}
 			
 			.form__input{
@@ -135,12 +143,14 @@ body{
 	}
 
 	&__control{
+
 		border-radius:0;
 		background: transparent;
 		border:none;
 		@include font($font-family-main, $font-weight-main,$gray-lighter);
 		font-size: 20px;
 		width:100%;
+		transition: all .3s ease-in-out;
 		
 		&::-webkit-input-placeholder {color:$gray-light;}
 		&::-moz-placeholder          {color:$gray-light;}/* Firefox 19+ */
@@ -149,6 +159,7 @@ body{
 
 		&:active,
 		&:focus{
+
 			outline:none;
 
 		}
@@ -158,6 +169,8 @@ body{
 
 		border-bottom: 1px solid $gray;
 		@include padding-vertical(10px,10px);
+		transition: border-bottom .3s ease-in-out;
+		
 		
 		
 				
@@ -187,6 +200,7 @@ body{
 		
 		resize:none;
 		
+		
 	}
 
 	&__progress{
@@ -194,10 +208,12 @@ body{
 		background-color: $gray-darker;
 		height:2px;
 		
+		
 		&-bar{
 			
 			height:2px;
 			background-color: $brand-warning;
+			transition: width .3s ease-in-out;
 			
 			&--top{
 
@@ -239,7 +255,7 @@ body{
 
 	@include font($font-family-main, $font-weight-main,$gray-lighter);
 	font-size: 20px;
-	width: 410px;
+	
 	border:none;
 	background: transparent;
 	display: block;
@@ -260,8 +276,10 @@ body{
 
 		border-radius: 50%;
 		cursor: default;
-		height:67px;
-		z-index:0;
+		height:40px;
+		@include margin-vertical(0, 10px);
+		font-size: 12px;
+		
 
 		&.-selected-,
 		&.-focus-{
@@ -319,7 +337,7 @@ body{
 		&-name{
 
 			color: $gray-lighter;
-			font-size: 20px;
+			font-size: 12px;
 			-webkit-flex: none;
 		    -ms-flex: none;
 		    -webkit-box-flex: none;
@@ -332,7 +350,7 @@ body{
 
 		&-names{
 			
-			@include margin-custom(0,0,40px,0);
+			@include margin-custom(0,0,37px,0);
 		}
 	}
 
@@ -384,21 +402,23 @@ body{
 	
 	background-color: $brand-milk;
 	color: $brand-bull;
-	@include padding-custom(70px, 100px, 45px, 100px);
-	width: 980px;
+	@include padding-custom(30px, 15px, 30px, 15px);
+	width: 300px;
 	margin:0 auto;
+	text-align: center;
+	
 	
 	&-holder{
 
 		display: none;//temporary
-		opacity:0;
 		position: fixed;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index:$zindex-modal;
-		background-color: $brand-cave;
+		z-index: $zindex-modal;
+		@include padding-vertical(30px,0);
+		overflow-y:auto;
 		
 	    
 	    &--show{
@@ -412,61 +432,47 @@ body{
 	&__img{
 
 		position: relative;   
-    	padding-bottom: 200px;
+    	margin:0 auto;
 		
 		&-santa{
 			
-			width: 375px;
+			width: 180px;
 		    position: absolute;
-		    left: -116px;
-		    top: -26px;
+		    left: 35px;
+    		top: -70px;
 		    transform: rotate(-15deg);
 			
-			&-svg{
-
-				fill: $brand-bull;
-
-			}
+			
 					
 		}
-
-		&-trees{
-
-			width: 523px;
-			position: absolute;
-			right: -77px;
-			top: 49px;
-
-		}		
+		
 	}
 
 	&__text{
 
 		@include font($font-family-main, $font-weight-ofthen,$brand-bull);
-		font-size: 73px;
+		font-size: 40px;
 		text-transform: uppercase;
-		display: inline-block;
-		vertical-align: top;
+		@include margin-custom(0, auto, 20px, auto);
+		
 		
 		&--extra{
 			
 			display: block;
 			font-weight: $font-weight-seldom;
-			font-size: 44px;
+			font-size: 40px;
 			
 		}
 	}
 		
 	&__newyear{
 			
-		display: inline-block;
-		vertical-align: top;
 		@include font($font-family-main, $font-weight-seldom,$brand-bull);
-		font-size: 44px;
+		font-size: 20px;
 		text-transform: uppercase;
 		border: 14px solid $brand-bull;
 		@include padding-custom(25px, 78px, 25px, 78px);
-		@include margin-horizontal(0,32px);
+		@include margin-custom(0,auto,20px,auto);
 		
 	}
 
@@ -479,16 +485,17 @@ body{
 .clock{
 
 	text-align: center;
-	width: 595px;
+	
 	overflow: hidden;	
 	
 	&__analog{
 
 		background-color: $brand-primary;
-		@include padding-vertical(30px,0);
+		@include padding-vertical(15px,0);
 		
 		&-holder{
 
+			position: relative;
 			height: 300px;
 			width: 300px;
 			border-radius:50%;
@@ -499,29 +506,27 @@ body{
 		
 		&-time{
 			
-			position: relative;
-			height: 100%;
-			width: 100%;
-			border-radius:50%;
+			height: 300px;
+			width: 300px;
 			background: url(../images/sprite.png) 25px 23px no-repeat;			
 			background-size: cover;
+			z-index: 1;
+    		position: relative;
 			
-			
-
 			&:hover,
 			&:focus{
 				
 				
 				
-				.clock__analog-hour{
+				+.clock__analog-hour{
 					opacity:1;
 					
 					&:before{
 						opacity:1;
 					}
 				}
-
 			}
+			
 		}
 
 		&-hour{
@@ -529,10 +534,10 @@ body{
 			width:0;
 			height:0;
 			position:absolute;
-			top: 50%;
-		    left: 37%;
-		    margin: 0px 0px 5px -18%;
-		    padding: 0px 11px 2px 29%;
+			top: 51%;
+		    left: 35%;
+		    margin: 0px 0px 5px -19%;
+		    padding: 0px 11px 2px 32%;
 			-webkit-transform-origin:100% 50%;
 			-ms-transform-origin:100% 50%;
 			transform-origin:100% 50%;
@@ -541,19 +546,21 @@ body{
 			opacity:0;
 			
 			&:before{
+
 				content:"";
 				width: 40px;
     			height: 40px;
 				border-radius:50%;
 				display: inline-block;
 				position: absolute;
-				left: -40px;
-    			top: -18px;
+				left: -35px;
+    			top: -17px;
     			opacity:0;
     			transition: all .3s ease-in-out;
     			background-color: $brand-danger;
-
 			}
+
+
 		}
 
 		&-minute{
@@ -567,8 +574,8 @@ body{
 		&-meridiem{
 
 			@include font($font-family-main, $font-weight-rare,$gray-base);
-			@include padding-custom(20px,17px,20px,17px);
-			font-size: 20px;
+			@include padding-custom(12px,10px,12px,10px);
+			font-size: 12px;
 			display: inline-block;
 			border-radius:50%;
 			color: $gray-lighter;
@@ -600,9 +607,10 @@ body{
 
 	&__digital{
 
-		font-size: 80px;
-		@include padding-custom(31px, 0, 33px, 0);
+		font-size: 40px;
+		@include padding-custom(15px, 0, 15px, 0);
 		background-color: $brand-danger;
+		
 		
 		
 		&-devider{
@@ -615,7 +623,7 @@ body{
 		
 		&-meridiem{
 			
-			font-size: 30px;
+			font-size: 15px;
 			@include margin-horizontal(0,-10px);
 			color: $brand-cream;
 		}
@@ -668,39 +676,48 @@ body{
 .menu{
 
 	position: fixed;
-    right: -595px;
-    top: 0;
+    
+    top: -431px; //added
+    left:0;//added
+    right:0;//added
     z-index:$zindex-navbar-fixed;
+    transition: all .3s ease-in-out;//added
     
     &.menu--open{
-    	right: 0px;
+
+    	
+    	top: 0; //added
 
     }
 	
 	&__icons{
 
-		width: 96px;
-		float:left;
-		@include margin-vertical(160px, 0);
+		
+		text-align: center;//added
 		
 		&-hamburger{
 
 			position: relative;
-			
-			height: 51px;
+			@include padding-vertical(0,44px);
+
 			
 			
 			&-holder{
 
 				background-color: $brand-bull;
 				@include padding-custom(20px, 10px, 22px, 10px);
+				width: 80px;
+				height: 80px;
+				display: inline-block; //added
+				vertical-align: top; //added
+				@include margin-horizontal(-4px,0); //added
 			}
 			
 			span{
 
 				display: block;
 				position: absolute;
-				height: 7px;
+				height: 5px;
 				width: 100%;
 				background: $gray-lighter;
 				opacity: 1;
@@ -733,7 +750,7 @@ body{
 				span{
 					
 					&:nth-child(1){
-						top:20px;
+						top:16px;
   						transform: rotate(135deg);
 					}
 
@@ -748,7 +765,7 @@ body{
 					}
 
 					&:nth-child(4){
-						top:20px;
+						top:16px;
   						transform: rotate(-135deg);
 					}
 				}
@@ -757,9 +774,13 @@ body{
 
 		&-item{
 
+			width: 80px; //added
+			display: inline-block; //added
+			vertical-align: top; //added
+			@include margin-horizontal(-4px,0); //added
 			font-size: 36px;
 			text-align: center;
-			@include padding-vertical(24px, 25px);
+			@include padding-vertical(18px, 19px);
 		}
 
 		&-facebook{
@@ -776,8 +797,9 @@ body{
 	}
 
 	&-holder{
-			
+		
 
+		transition: background-color .3s ease-in-out;
 		
 		&--open{
 
@@ -819,6 +841,38 @@ body{
 		margin:0;
 	}
 
+	.datepicker{
+
+		width:410px;
+		
+		&--cell{
+
+			font-size: 20px;
+			height:60px;
+			
+			
+		}
+
+		&--day{
+
+
+
+			&-name{
+				
+				font-size: 20px;
+				
+			}
+		}
+
+		&--days{
+			
+			&-name{
+
+				@include margin-custom(0,0,35px,0);
+			}
+		}
+	}
+
 	.main{
 
 		&__calendar{
@@ -835,6 +889,52 @@ body{
 			margin:0 auto;
 			display: block;
 			
+		}
+	}
+
+	.popup{
+
+		width: 700px;
+		@include padding-custom(60px, 30px, 60px, 30px);
+		
+		&__text{
+
+			font-size: 50px;
+			@include margin-custom(0, auto, 0, auto);
+			display: inline-block;
+			vertical-align: top;
+			
+			&--extra{
+				
+				font-size: 30px;
+			}
+		}
+
+		&__newyear{
+
+			@include margin-custom(0,auto,0,32px);
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		&__img{
+
+			@include padding-vertical(0,100px);
+			
+			&-santa{
+
+				width: 300px;
+				left: -27px;
+    			top: -92px;
+			}
+
+			&-trees{
+
+				width: 370px;
+			    position: absolute;
+			    right: -10px;
+			    top: -20px;
+			}
 		}
 	}
 }
@@ -865,15 +965,155 @@ body{
 		&__content{
 
 			position: relative;
-	    		left: 0;
+			top:0;
+	    	right: 0;
+	    	
 	    		
 			
 			&--move{
-				position: relative;
-	    		left: -595px;
+				
+				
+	    		right: 595px;
 			}
 		}
 	}
+
+	.popup{
+		
+		width:900px;
+		@include padding-custom(70px, 100px, 45px, 100px);
+		
+		&__text{
+
+			font-size: 60px;
+			
+			&--extra{
+
+				font-size: 44px;
+			}
+		}
+
+		&__newyear{
+			
+			font-size: 30px;
+			@include margin-horizontal(0,28px);
+		}
+
+		&__img{
+
+			padding-bottom: 200px;
+			
+			&-santa{
+			
+			width: 375px;
+		    left: -116px;
+		    top: -26px;						
+		}
+
+		&-trees{
+
+			width: 523px;
+			position: absolute;
+			right: -77px;
+			top: 49px;
+
+		}		
+		}
+	}
+
+	.menu{
+
+		right: -595px;
+	    top: 0;
+	    left: auto;
+    	
+    	&.menu--open{
+			
+			right:0;
+    		
+    	}
+
+    	&__icons{
+
+    		position: absolute;
+		    left: -96px;
+		    top: 0;
+			@include margin-vertical(160px, 0);
+			
+			&-hamburger{
+				
+				
+				&-holder{
+					height: 92px;
+					width: 96px;
+					display: block;
+					vertical-align: none;
+					@include margin-horizontal(0,0);
+					
+				}
+
+				span{
+
+					height: 7px;	
+				}
+
+				&.hamburger-open{
+
+					span{
+						
+						&:nth-child(1){
+							top:20px;
+	  						
+						}
+
+						&:nth-child(4){
+							top:20px;
+						}
+					}
+				}
+			}
+
+			&-item{
+
+				width: 96px;
+				display: block;
+				vertical-align: none;
+				@include margin-horizontal(0,0);
+				@include padding-vertical(24px, 25px);
+			}
+    	}
+	}
+
+	.clock{
+
+		width: 595px;
+		
+		&__digital{
+
+			font-size: 80px;
+			@include padding-custom(31px, 0, 33px, 0);
+			
+			&-meridiem{
+			
+				font-size: 30px;
+				
+			}
+		}
+
+		&__analog{
+
+			@include padding-vertical(30px,0);
+			
+			&-meridiem{
+
+				@include padding-custom(20px,17px,20px,17px);
+				font-size: 20px;
+
+			}
+		}
+	}
+
+	
 }
 
 @media (min-width:$screen-lg){
@@ -903,6 +1143,23 @@ body{
 			vertical-align: middle;
 			width: 34%;
 			@include margin-horizontal(0, 60px);
+		}
+	}
+
+	.popup{
+		
+		width: 980px;
+		@include padding-custom(70px, 100px, 45px, 100px);
+		
+		&__text{
+
+			font-size: 73px;
+		}
+
+		&__newyear{
+			
+			font-size: 44px;
+			@include margin-horizontal(0,32px);
 		}
 	}
 }

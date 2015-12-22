@@ -146,6 +146,8 @@ $(document).ready(function(){
 
 // Hidden menu
 
+// SHOW
+
 $(document).ready(function(){
     $('.menu__icons-hamburger').click(function(){
         $(".menu").toggleClass('menu--open');
@@ -154,6 +156,18 @@ $(document).ready(function(){
 
 
     });
+});
+
+// HIDE by clicking outside
+
+$(document).click(function(e) {
+
+    if (e.target.class != 'menu' && !$('.menu').find(e.target).length) {
+        $(".menu").removeClass('menu--open');
+        $(".main__content").removeClass('main__content--move');
+        $(".menu-holder").removeClass('menu-holder--open');
+        $(".menu__icons-hamburger").removeClass('hamburger-open');
+    }
 });
 
 
