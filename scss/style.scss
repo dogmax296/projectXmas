@@ -58,7 +58,7 @@ body{
 		    transform: rotate(-20deg);		    	
 		}
 		&-merry-xmas{
-			width: 450px;
+			width: 300px;
 			@include margin-custom(105px, auto, 0, auto);
 		}
 	}
@@ -85,7 +85,7 @@ body{
 
 	@include font($font-family-main, $font-weight-main,$gray-lighter);
 	font-size: 20px;
-	width: 400px;
+	width: 300px;
 	border:none;
 	background: transparent;
 	display: block;
@@ -239,7 +239,7 @@ body{
 		}
 	}
 
-	&__control{
+	&-control{
 		border-radius:0;
 		background: transparent;
 		border:none;
@@ -709,7 +709,7 @@ body{
 
 		&__calendar{
 
-			width: 100%;
+			
     		text-align: center;
     		@include margin-vertical(0,100px);
 

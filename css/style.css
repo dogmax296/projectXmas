@@ -958,7 +958,7 @@ body {
 }
 
 .main__img-merry-xmas {
-  width: 450px;
+  width: 300px;
   margin-top: 105px;
   margin-right: auto;
   margin-bottom: 0;
@@ -989,7 +989,7 @@ body {
   font-weight: 400;
   color: white;
   font-size: 20px;
-  width: 400px;
+  width: 300px;
   border: none;
   background: transparent;
   display: block;
@@ -1142,7 +1142,7 @@ body {
   border-bottom: 1px solid #f85a44;
 }
 
-.form__control {
+.form-control {
   border-radius: 0;
   background: transparent;
   border: none;
@@ -1157,24 +1157,24 @@ body {
   /* Firefox 18- */
 }
 
-.form__control::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder {
   color: #767b7d;
 }
 
-.form__control::-moz-placeholder {
+.form-control::-moz-placeholder {
   color: #767b7d;
 }
 
-.form__control:-moz-placeholder {
+.form-control:-moz-placeholder {
   color: #767b7d;
 }
 
-.form__control:-ms-input-placeholder {
+.form-control:-ms-input-placeholder {
   color: #767b7d;
 }
 
-.form__control:active,
-.form__control:focus {
+.form-control:active,
+.form-control:focus {
   outline: none;
 }
 
@@ -1643,7 +1643,6 @@ body {
     width: 750px;
   }
   .main__calendar {
-    width: 100%;
     text-align: center;
     margin-top: 0;
     margin-bottom: 100px;
